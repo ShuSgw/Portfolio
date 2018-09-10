@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass --include-path scss assets/styles/main.scss assets/styles/style.css -w",
+    "browse": "browser-sync start --server --files *",
+    "dev": "run-p sass browse"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.9.3"
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3"
   }
 }
