@@ -1,0 +1,44 @@
+.wrapper {
+    position: relative;
+    .container {
+        width: 90%;
+        height: 100vh;
+        margin: 0 auto;
+        position: relative;
+        @include mq(md) {
+            width: 85%;
+        }
+        @include mq(lg) {
+            width: 85%;
+        }
+    }
+}
+
+.contents {
+    opacity: 0;
+    position: relative;
+}
+
+.contents__logo {
+    z-index: -1;
+    width: 50%;
+    max-width: 600px;
+    opacity: 0.1;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.fullpage {
+    width: 100%;
+}
+
+.section {
+    width: 100%;
+    position: relative;
+}
+
+.link-active {
+    background-color: white;
+}

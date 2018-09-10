@@ -1,0 +1,33 @@
+$fornt_title: 18vw;
+$fornt_sub_title: 8vw;
+.titleBox {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.titleBox__title {
+    font-size: $fornt_title;
+    padding: .5em 0;
+    @include mq(md) {
+        font-size: $fornt_title - 11vw;
+    }
+    @include mq(lg) {
+        font-size: $fornt_title - 11vw;
+    }
+}
+
+.titleBox__subTitle {
+    font-size: $fornt_sub_title;
+    line-height: 1.5;
+    @include mq(md) {
+        font-size: $fornt_sub_title - 5.5vw;
+    }
+    @include mq(lg) {
+        font-size: $fornt_sub_title - 5.5vw;
+    }
+}

@@ -1,0 +1,107 @@
+.main {
+    position: relative;
+    z-index: 99;
+    padding: 0 10%;
+}
+
+.projects {
+    position: relative;
+
+    &:before {
+        content: "";
+        background: $color-main;
+        opacity: .7;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &:nth-of-type(1) {
+        background: #ddd url('../img/project00/01.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+
+    &:nth-of-type(2) {
+        background: #ddd url('../img/project03/mockup.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+
+    &:nth-of-type(3) {
+        background: #ddd url('../img/project01/01.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+
+    &:nth-of-type(4) {
+        background: #ddd url('../img/project02/mockup.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+
+    &:nth-of-type(5) {
+        background: #ddd url('../img/project04/mockup.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+
+    &:nth-of-type(6) {
+        background: #ddd url('../img/project07/01.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+
+    &:nth-of-type(7) {
+        background: #ddd url('../img/project05/mail_design.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+
+    &:nth-of-type(8) {
+        background: #ddd url('../img/project06/posters.jpg') no-repeat center center;
+        background-size: auto 100%;
+        background-size: cover;
+    }
+}
+
+.main__title {
+    font-size: 2.2em;
+    color: white;
+
+    @include mq(lg) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+}
+
+.main__texts {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: white;
+    padding: 1em 0;
+
+    @include mq(lg) {}
+
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.main__wf {
+    display: inline-block;
+    width: 15%;
+}
+
+.main__links {
+    color: white;
+    text-align: center;
+    display: inline-block;
+    background: $color-main;
+    padding: 1em;
+    margin: 0 auto;
+
+    &:hover {
+        background: black;
+    }
+}

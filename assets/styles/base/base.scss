@@ -1,0 +1,22 @@
+body {
+    background: $color-main;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: all 300ms 0s ease;
+
+    &:hover {
+        color: grey;
+    }
+}
+
+p {
+    color: white;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background: silver;
+}
