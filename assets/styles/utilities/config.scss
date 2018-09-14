@@ -11,33 +11,45 @@ $screen-xs: 480px !default; //Extra small screen(xs)->smartphone
 $screen-sm: 768px !default; //Small screen(sm) ->tablet
 $screen-md: 992px !default; //Medium screen(md) ->desktop
 $screen-lg: 1200px !default; //Large screen(lg） ->wide desktop
+
 @mixin mq($DEVICE) {
+
     // Large screen / wide desktop
     @if $DEVICE=="lg" {
         @media (min-width: $screen-lg) {
             @content;
         }
-    } // Medium screen / desktop
+    }
+
+    // Medium screen / desktop
     @else if $DEVICE=="md" {
         @media (min-width: $screen-md) and (max-width: ($screen-lg - 1)) {
             @content;
         }
-    } // Small screen / tablet
+    }
+
+    // Small screen / tablet
     @else if $DEVICE=="sm" {
         @media (min-width: $screen-sm) and (max-width: ($screen-md - 1)) {
             @content;
         }
-    } // Extra small screen / smartphone
+    }
+
+    // Extra small screen / smartphone
     @else if $DEVICE=="xs" {
         @media (max-width: ($screen-sm - 1)) {
             @content;
         }
-    } // ★PC★ (md & lg)
+    }
+
+    // ★PC★ (md & lg)
     @else if $DEVICE=="pc" {
         @media (min-width: $screen-md) {
             @content;
         }
-    } // ★SP★ (xs & sm)
+    }
+
+    // ★SP★ (xs & sm)
     @else if $DEVICE=="sp" {
         @media (max-width: ($screen-md - 1)) {
             @content;

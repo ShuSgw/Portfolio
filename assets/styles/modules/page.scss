@@ -1,13 +1,16 @@
 .wrapper {
     position: relative;
+
     .container {
-        width: 90%;
+        width: 100%;
         height: 100vh;
         margin: 0 auto;
         position: relative;
+
         @include mq(md) {
             width: 85%;
         }
+
         @include mq(lg) {
             width: 85%;
         }

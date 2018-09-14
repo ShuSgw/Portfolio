@@ -111,12 +111,12 @@ $(document).ready(function () {
     // 
     // 
     // rotate animation
-    var logoRotate = $('.contents__logo')
-    TweenMax.to(logoRotate, 30, {
-        rotation: "360",
-        ease: Linear.easeNone,
-        repeat: -1
-    });
+    // var logoRotate = $('.contents__logo')
+    // TweenMax.to(logoRotate, 30, {
+    //     rotation: "360",
+    //     ease: Linear.easeNone,
+    //     repeat: -1
+    // });
     // 
     // 
     // 
@@ -148,7 +148,8 @@ $(document).ready(function () {
         })
         .to(nav, .1, {
             display: "block",
-            right: "-5%",
+            position: "absolute",
+            right: "0%",
             ease: Power4.easeOut,
             width: "65%",
             height: "40%"
@@ -165,16 +166,17 @@ $(document).ready(function () {
     if ($(window).width() > 1024) {
         var rXP = 300;
         var rYP = 300;
-        $('.titleBox__title').css('text-shadow', rYP / 8 + 'px ' + rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 +
-            'px ' + rYP / 12 +
-            'px rgba(0,159,227,.3)');
+        // $('.titleBox__title').css('text-shadow', rYP / 8 + 'px ' + rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 +
+        //     'px ' + rYP / 12 +
+        //     'px rgba(0,159,227,.3)');
 
         $('.wrapper').mousemove(function (e) {
             var rXP = (e.pageX - this.offsetLeft - $(this).width() / 2);
             var rYP = (e.pageY - this.offsetTop - $(this).height() / 2);
-            $('.titleBox__title').css('text-shadow', rYP / 8 +
-                'px ' +
-                rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.3)');
+            $('.titleBox__title').css('text-shadow', rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,0,0,.3)');
+            // console.log('text-shadow', rYP / 8 +
+            //     'px ' +
+            //     rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.1)')
         });
     }
     // full screen
@@ -186,4 +188,7 @@ $(document).ready(function () {
             navigationTooltips: ['', '', '', ''],
         });
     });
+
+    // logo animation
+
 });
