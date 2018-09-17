@@ -4,40 +4,48 @@
     display: none;
     z-index: 2;
     background: black;
+    max-width: $contentMax;
 
     @include mq(lg) {
-        width: 100%;
+        width: 85%;
+        margin: 0 auto;
         background: transparent;
-        right: 0;
+        right: 50%;
+        transform: translate(50%, 0%);
         border-radius: 0 0 0 0;
         display: block;
-        // background: black;
     }
 }
 
 .nav__logo {
+
     // background: pink;
-    z-index: 999;
-    position: absolute;
-    height: 50%;
-    padding: 1.8% 0;
+    display: none;
 
-    &:hover>#circle {
-        transform-origin: 50% 50%;
-        transition: all 1s;
-        transform: rotate3d(1, 1, 0, 180deg);
-    }
+    @include mq(lg) {
+        display: block;
+        z-index: 999;
+        position: absolute;
+        height: 50%;
+        padding: 1.8% 0;
 
-    &:hover>#silverRightS {
-        transform-origin: 50% 50%;
-        transition: all 1s .1s;
-        transform: rotate3d(1, 1, 0, 360deg);
-    }
+        &:hover>#circle {
+            transform-origin: 50% 50%;
+            transition: all 1s;
+            transform: rotate3d(1, 1, 0, 180deg);
+        }
 
-    &:hover>#silverLeftS {
-        transform-origin: 50% 50%;
-        transition: all 1s .1s;
-        transform: rotate3d(1, 1, 0, 360deg);
+        &:hover>#silverRightS {
+            transform-origin: 50% 50%;
+            transition: all 1s .1s;
+            transform: rotate3d(1, 1, 0, 360deg);
+        }
+
+        &:hover>#silverLeftS {
+            transform-origin: 50% 50%;
+            transition: all 1s .1s;
+            transform: rotate3d(1, 1, 0, 360deg);
+        }
     }
 }
 
@@ -72,6 +80,7 @@
     &:nth-child(3) {
         margin-left: 7.5em;
     }
+
 
     // underline
     a {
@@ -114,7 +123,21 @@
 
         &:nth-child(3) {
             margin: 0;
+            padding-right: 0;
         }
+    }
+}
+
+.logoMobile {
+    position: absolute;
+    top: 6%;
+    left: 5%;
+    width: 12%;
+    max-width: 150px;
+    z-index: 999;
+
+    @include mq(lg) {
+        display: none;
     }
 }
 

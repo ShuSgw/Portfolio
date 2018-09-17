@@ -163,7 +163,10 @@ $(document).ready(function () {
     });
 
     // drop shadow animation
+
     if ($(window).width() > 1024) {
+        // logo mobile and desktop
+        // logo background animation
         var rXP = 300;
         var rYP = 300;
         // $('.titleBox__title').css('text-shadow', rYP / 8 + 'px ' + rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 +

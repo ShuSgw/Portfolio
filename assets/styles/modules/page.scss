@@ -7,13 +7,13 @@
         margin: 0 auto;
         position: relative;
 
-        @include mq(md) {
-            width: 85%;
-        }
+        // @include mq(md) {
+        //     width: 85%;
+        // }
 
-        @include mq(lg) {
-            width: 85%;
-        }
+        // @include mq(lg) {
+        //     width: 85%;
+        // }
     }
 }
 
@@ -24,13 +24,13 @@
 
 .contents__logo {
     z-index: -1;
-    width: 50%;
+    width: 40%;
     max-width: 600px;
-    opacity: 0.1;
+    opacity: 0.05;
     position: absolute;
     top: 50%;
     right: 50%;
-    transform: translate(50%, -50%);
+    animation: rotating 10s linear infinite;
 }
 
 .fullpage {
