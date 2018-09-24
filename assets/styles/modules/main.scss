@@ -92,12 +92,14 @@
 
 .main--about {
     top: 20%;
+    padding: 3em 0;
+    // background: red;
     max-height: initial;
     height: initial;
     display: block;
 
     @include mq(lg) {
-        top: 20%;
+        top: 15%;
     }
 }
 
@@ -149,8 +151,12 @@
     font-size: 2.2em;
     width: 100%;
     color: white;
+    // padding: 2em 0 .6em 0;
 }
 
+.main__title--about {
+    padding: 2em 0 .6em 0;
+}
 
 .main__texts {
     font-size: 1rem;
@@ -181,7 +187,6 @@
     background: black;
     padding: 1em;
     margin: 0 auto;
-    background: purple;
 
     &:hover {
         background: black;
@@ -192,6 +197,8 @@
 .main__image {
     width: 50%;
     height: 50%;
+    position: relative;
+
 
     @include mq(lg) {
         max-width: 300px;

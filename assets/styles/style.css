@@ -144,10 +144,10 @@ table {
   border-spacing: 0; }
 
 .nav {
-  position: absolute;
+  position: fixed;
   border-radius: 0 0 0 100%;
   display: none;
-  z-index: 2;
+  z-index: 9999999;
   background: black;
   max-width: 1024px;
   max-height: 700px; }
@@ -403,12 +403,13 @@ table {
 
 .main--about {
   top: 20%;
+  padding: 3em 0;
   max-height: initial;
   height: initial;
   display: block; }
   @media (min-width: 1200px) {
     .main--about {
-      top: 20%; } }
+      top: 15%; } }
 
 .main__blockList {
   width: 40%;
@@ -451,6 +452,9 @@ table {
   width: 100%;
   color: white; }
 
+.main__title--about {
+  padding: 2em 0 .6em 0; }
+
 .main__texts {
   font-size: 1rem;
   line-height: 1.7;
@@ -475,27 +479,72 @@ table {
   display: inline-block;
   background: black;
   padding: 1em;
-  margin: 0 auto;
-  background: purple; }
+  margin: 0 auto; }
   .main__links:hover {
     background: black; }
 
 .main__image {
   width: 50%;
-  height: 50%; }
+  height: 50%;
+  position: relative; }
   @media (min-width: 1200px) {
     .main__image {
       max-width: 300px;
       float: right; } }
 
-.backHomeBtn {
-  width: 100px;
-  height: 100px;
-  background: red;
-  position: fixed;
-  right: 200px;
-  bottom: 100px;
-  z-index: 9999999; }
+.skillBoxes {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white; }
+
+h4 {
+  width: 95%;
+  margin: 0 auto;
+  font-size: 1.2em; }
+
+.skillBoxes__box {
+  width: 30%;
+  padding: 1em 0;
+  display: flex;
+  flex-flow: column; }
+
+.skillBoxes__box__skillName {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 1em; }
+
+.skillBoxes__box__bar {
+  width: 94%;
+  height: 13px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+  margin-top: .8em; }
+
+.skillBoxes__box__bar__chart {
+  position: absolute;
+  background: white;
+  border-radius: 20px;
+  height: 100%; }
+
+.skillBoxes__box__bar__chart__100 {
+  width: 100%; }
+
+.skillBoxes__box__bar__chart__80 {
+  width: 80%; }
+
+.skillBoxes__box__bar__chart__60 {
+  width: 60%; }
+
+.skillBoxes__box__bar__chart__40 {
+  width: 40%; }
+
+.skillBoxes__box__bar__chart__20 {
+  width: 20%; }
 
 @keyframes rotating {
   from {

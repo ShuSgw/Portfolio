@@ -1,0 +1,69 @@
+.skillBoxes {
+    // background: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+h4 {
+    width: 95%;
+    margin: 0 auto;
+    font-size: 1.2em;
+}
+
+.skillBoxes__box {
+    width: 30%;
+    // height: 250px;
+    padding: 1em 0;
+    // background: pink;
+    display: flex;
+    flex-flow: column;
+}
+
+.skillBoxes__box__skillName {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+.skillBoxes__box__bar {
+    width: 94%;
+    height: 13px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    // background: black;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    margin-top: .8em;
+}
+
+
+.skillBoxes__box__bar__chart {
+    position: absolute;
+    background: white;
+    border-radius: 20px;
+    height: 100%;
+}
+
+.skillBoxes__box__bar__chart__100 {
+    width: 100%;
+}
+
+.skillBoxes__box__bar__chart__80 {
+    width: 80%;
+}
+
+.skillBoxes__box__bar__chart__60 {
+    width: 60%;
+}
+
+.skillBoxes__box__bar__chart__40 {
+    width: 40%;
+}
+
+.skillBoxes__box__bar__chart__20 {
+    width: 20%;
+}
