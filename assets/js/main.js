@@ -182,15 +182,6 @@ $(document).ready(function () {
             //     rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.1)')
         });
     }
-    // full screen
-    $(function () {
-        $('.fullpage').fullpage({
-            anchors: ['1', '2', '3', '4'],
-            navigation: true,
-            navigationPosition: 'left',
-            navigationTooltips: ['', '', '', ''],
-        });
-    });
 
     // logo animation
 

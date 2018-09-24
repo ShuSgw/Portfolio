@@ -5,6 +5,7 @@
     z-index: 2;
     background: black;
     max-width: $contentMax;
+    max-height: 700px;
 
     @include mq(lg) {
         width: 85%;
@@ -16,6 +17,7 @@
         display: block;
     }
 }
+
 
 .nav__logo {
 

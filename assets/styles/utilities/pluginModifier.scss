@@ -1,0 +1,65 @@
+// modifier for fullpage navigation
+#fp-nav {
+    position: absolute;
+    opacity: .5;
+    width: 100%;
+    pointer-events: none;
+
+    ul {
+        // background: pink;
+        margin: 0 auto;
+
+        @include mq(lg) {
+            width: $contentMax+200px;
+        }
+
+
+        li {
+            margin: .5% 0;
+            // background: green;
+            position: relative;
+            height: 30px;
+            pointer-events: auto;
+            opacity: 1;
+
+            &:hover a span {
+                width: 60%;
+                height: 100%;
+                margin: 0;
+                opacity: 1;
+            }
+
+            &:hover a.active span {
+                width: 60%;
+                height: 100%;
+                margin: 0;
+                border-radius: 0;
+                opacity: 1;
+            }
+
+            a {
+                &.active {
+                    span {
+                        margin: 0 0;
+                        border-radius: 0;
+                        background: white;
+                        transform: translate(-50%, -50%);
+                        height: 60%;
+                        width: 60%;
+                    }
+                }
+
+                span {
+                    margin: 0 0;
+                    border-radius: 0;
+                    background-color: rgba(0, 0, 0, 1);
+                    transform: translate(-50%, -50%);
+                    height: 90%;
+                    width: 65%;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+}
