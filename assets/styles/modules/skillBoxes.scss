@@ -1,9 +1,7 @@
 .skillBoxes {
-    // background: yellow;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    color: white;
+    flex-direction: column;
 }
 
 h4 {
@@ -13,10 +11,9 @@ h4 {
 }
 
 .skillBoxes__box {
-    width: 30%;
-    // height: 250px;
+    background: yellow;
+    width: 100%;
     padding: 1em 0;
-    // background: pink;
     display: flex;
     flex-flow: column;
 }

@@ -1,93 +1,58 @@
 .nav {
-    position: fixed;
-    border-radius: 0 0 0 100%;
-    display: none;
-    z-index: 9999999;
+    position: relative;
     background: black;
-    max-width: 1024px;
-    max-height: 700px;
-
-    @include mq(lg) {
-        width: 85%;
-        margin: 0 auto;
-        background: transparent;
-        right: 50%;
-        transform: translate(50%, 0%);
-        border-radius: 0 0 0 0;
-        display: block;
-    }
-}
-
-
-.nav__logo {
-
-    // background: pink;
+    right: 0;
+    height: 100%;
     display: none;
+    z-index: 999;
+    max-width: 350px;
 
-    @include mq(lg) {
+    @include pc {
+        background: transparent;
+        position: fixed;
         display: block;
-        z-index: 999;
-        position: absolute;
-        height: 50%;
-        padding: 1.8% 0;
-
-        &:hover>#circle {
-            transform-origin: 50% 50%;
-            transition: all 1s;
-            transform: rotate3d(1, 1, 0, 180deg);
-        }
-
-        &:hover>#silverRightS {
-            transform-origin: 50% 50%;
-            transition: all 1s .1s;
-            transform: rotate3d(1, 1, 0, 360deg);
-        }
-
-        &:hover>#silverLeftS {
-            transform-origin: 50% 50%;
-            transition: all 1s .1s;
-            transform: rotate3d(1, 1, 0, 360deg);
-        }
+        height: initial;
+        width: 270px;
+        transform: translate(0%, -25%);
+        top: 5%;
+        right: 4%;
     }
+
+    // width: 100%;
+    // height: 100%;
+    // position: relative;
+    // width: 100%;
+    // display: block;
+    // z-index: 9999;
+    // background: black;
 }
 
 // ul
 .nav__box {
-    @include mq(lg) {
-        width: auto;
-        height: auto;
+    position: absolute;
+    top: 37%;
+    transform: translate(0, -50%);
+
+    @include pc {
         position: relative;
-        text-align: right;
-        width: 100%;
+        transform: translate(0, 0);
+        display: flex;
+        justify-content: space-between;
     }
 }
 
-// for mobile
 .nav__box__list {
-    display: none;
-    font-size: 5vw;
-    margin: 2.5em 0;
-    position: relative;
+    font-size: 2em;
+    padding: 3.5em 1em 0 1.5em;
 
-    // background: blue;
-    &:nth-child(1) {
-        margin-left: 2.5em;
+    &:first-of-type {
+        padding-top: 0;
     }
 
-    &:nth-child(2) {
-        margin-left: 5em;
-    }
-
-    &:nth-child(3) {
-        margin-left: 7.5em;
-    }
-
-
-    // underline
+    // underline 
     a {
         position: relative;
 
-        // background: red;
         &:after {
             position: absolute;
             bottom: -50%;
@@ -97,7 +62,6 @@
             background: grey;
             transition: all .3s;
             width: 0%;
-            // height: 2px;
         }
 
         &:hover::after {
@@ -106,54 +70,29 @@
         }
     }
 
-    @include mq(lg) {
-        display: inline-block;
-        padding: 1.5em 1em 1.5em 1.5em;
-        margin: 0;
+    @include pc {
+        //reset
+        padding: .9em 0;
         font-size: 1.2em;
-        width: auto;
-        height: auto;
 
-        &:nth-child(1) {
-            margin: 0;
-        }
-
-        &:nth-child(2) {
-            margin: 0;
-        }
-
-        &:nth-child(3) {
-            margin: 0;
-            padding-right: 0;
+        &:first-of-type {
+            padding-top: .9em;
         }
     }
 }
 
-.logoMobile {
-    position: absolute;
-    top: 6%;
-    left: 5%;
-    width: 12%;
-    max-width: 150px;
-    z-index: 999;
-
-    @include mq(lg) {
-        display: none;
-    }
-}
 
 .hamburger {
-    width: 15%;
-    max-width: 150px;
-    height: 9%;
+    width: 40px;
+    height: 25px;
     position: absolute;
     cursor: pointer;
     position: absolute;
     top: 5%;
-    right: 5%;
+    right: 4%;
     z-index: 99999;
 
-    @include mq(lg) {
+    @include pc {
         display: none;
     }
 }
@@ -161,24 +100,25 @@
 .hamburger__line {
     display: block;
     position: absolute;
-    height: 6px;
+    height: 3px;
     width: 90%;
     background: white;
     border-radius: 5px;
     opacity: 1;
     background: silver;
     right: 50%;
-    transform: translate(50%, -50%);
+    transform: translate(50%, 0);
 
     &:nth-child(1) {
-        top: 25%;
+        top: 0;
     }
 
     &:nth-child(2) {
         top: 50%;
+        transform: translate(50%, -50%);
     }
 
     &:nth-child(3) {
-        top: 75%;
+        bottom: 0;
     }
 }

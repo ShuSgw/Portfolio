@@ -1,18 +1,12 @@
 // modifier for fullpage navigation
 #fp-nav {
     position: absolute;
-    opacity: .5;
     width: 100%;
     pointer-events: none;
 
     ul {
-        // background: pink;
         margin: 0 auto;
-
-        @include mq(lg) {
-            width: $contentMax+200px;
-        }
-
+        width: 95%;
 
         li {
             margin: .5% 0;
@@ -62,4 +56,10 @@
         }
     }
 
+}
+
+// font-awasome
+.fab {
+    font-size: 2em;
+    margin: .5em 1.2em 0 0;
 }
