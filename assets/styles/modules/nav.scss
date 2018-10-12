@@ -85,9 +85,8 @@
 .hamburger {
     width: 40px;
     height: 25px;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
-    position: absolute;
     top: 5%;
     right: 4%;
     z-index: 99999;

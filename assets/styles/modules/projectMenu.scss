@@ -1,7 +1,116 @@
 #projectMenu {
-    position: absolute;
-    background: red;
-    z-index: 9999999;
-    width: 90%;
+    position: relative;
+    background: black;
+    top: 0;
+    left: 0;
     height: 100%;
+    display: none;
+    max-width: 300px;
+    z-index: 999;
+    padding-top: 1.1em;
+
+    @include pc {
+        max-width: 500px;
+    }
+
+    li {
+        height: 7.7%;
+        padding: 5% 5.5%;
+        position: relative;
+
+        @include pc {
+            max-height: 40px;
+        }
+
+        &:after {
+            content: "";
+            width: 90%;
+            height: 1px;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(5%, 0)
+        }
+
+        a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sampleText {
+            font-size: 1.2em;
+            width: 45%;
+            // align-self: baseline;
+        }
+
+        .sampleImg {
+            display: block;
+            width: 50%;
+            align-self: baseline;
+        }
+
+        h5 {
+            font-size: 1em;
+            padding-bottom: .3em;
+        }
+
+        p {
+            font-size: .5em;
+        }
+
+        h5,
+        p {
+            color: white;
+        }
+    }
+}
+
+.arrow {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 4%;
+    left: 11%;
+    transform: translate(-50%, -50%);
+
+    &:hover .arrow__line {
+        background: gray;
+    }
+
+}
+
+.arrow__line {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    opacity: 1;
+    right: 50%;
+    transition: all .3s;
+
+    &:nth-child(1) {
+        width: 50%;
+        top: 15%;
+        transform-origin: right center;
+        transform: rotate(-40deg)
+    }
+
+    &:nth-child(2) {
+        top: 50%;
+        transform: translate(50%, -50%);
+        width: 80%;
+    }
+
+    &:nth-child(3) {
+        width: 50%;
+        bottom: 15%;
+        transform-origin: right center;
+        transform: rotate(40deg);
+    }
 }

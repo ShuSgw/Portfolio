@@ -1,3 +1,4 @@
+// for background logo
 @keyframes rotating {
     from {
         transform: translate(50%, -50%) rotate(0deg);
@@ -5,5 +6,40 @@
 
     to {
         transform: translate(50%, -50%) rotate(360deg);
+    }
+}
+
+// for email
+.blinking {
+    animation: blink .1s ease-in-out 50 alternate;
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }

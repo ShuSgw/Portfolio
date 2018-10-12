@@ -81,82 +81,42 @@
                     </li>
                 </ul>
             </nav>
-            <div class="main">
-                <div class="contentBox">
-                    <div class="contentBox__image">
-                        <img src="./assets/img/defo.jpg" alt="profile_image">
-                    </div>
-                    <div class="socialBtns">
-                        <div><a href=""><i class="fab fa-linkedin socialBtns__socialIcon"></i></a></div>
-                        <div><a href=""><i class="fab fa-github-square socialBtns__socialIcon"></i></a></div>
-                        <div><a href=""><i class="fab fa-twitter-square socialBtns__socialIcon"></i></a></div>
-                    </div>
-                    <div class="contentBox__textBox contentBox__textBox--about">
-                        <h3 class="contentBox__textBox__title">About "Shu"</h3>
+            <div class="main main">
+                <div class="contentBox contentBox--project">
+                    <div class="contentBox__textBox contentBox__textBox--project">
+                        <h3 class="contentBox__textBox__title">Shareable Birthday Card</h3>
                         <p class="contentBox__textBox__text">
-                            Shuhei Shagawa is a student who major in Web development
-                            at BCIT. Shuhei wants to
-                            be a creative and passionate Front-End Developer and Graphic Designer in Vancouver, BC. He
-                            graduated from an
-                            University and was majoring in Fine Art in Japan. He codes HTML, CSS, and JavaScript
-                            because he likes entering data
-                            and seeing a response. He also likes the rewarding feeling of solving problems.
+                            "Shareable Birthday Card" is a single webpage base application created by HTML, CSS, and
+                            Javascript with jQuery
+                            platform. All images I used are SVG data and I control them by CSS animation and jQuery.
+                            There are three basic
+                            interactive functions on this website. Users can control the position of drinks with
+                            drag-and-drop. Also, when users
+                            tap a balloon, it goes away. Finally, the note illustration is also interactive. When users
+                            tap or click it, the jQuery
+                            connect to JSON based iTunes database by Ajax which can perform an asynchronous HTTP
+                            request. When the Ajax bring the
+                            iTunes Date back, JavaScript Audio API receives the information and play music randomly.
                         </p>
-                    </div>
-                </div>
-                <div class="skillBoxes">
-                    <h3 class="skillBoxs__title">Skills</h3>
-                    <div class="skillBoxes__box">
-                        <h4>Development</h4>
-                        <h5 class="skillBoxes__box__skillName">HTML5</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__100"></div>
+                        <div class="tags">
+                            <ul>
+                                <li class="tags__item blue">HTML5</li>
+                                <li class="tags__item yellow">CSS3</li>
+                                <li class="tags__item red">JavaScript</li>
+                                <li class="tags__item green">jQuery</li>
+                                <li class="tags__item purple">Ajax</li>
+                                <li class="tags__item orange">iTunes API</li>
+                            </ul>
                         </div>
-                        <h5 class="skillBoxes__box__skillName">CSS3 (BEM, SMACSS, OOCSS)</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__80"></div>
+                        <div class="contentBox__image contentBox__image--project">
+                            <img src="./assets/img/project01/01.jpg" alt="profile_image">
                         </div>
-                        <h5 class="skillBoxes__box__skillName">JavaScript / ES6 / jQuery</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__80"></div>
-                        </div>
-                        <h5 class="skillBoxes__box__skillName">React.js / Redux</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__40"></div>
-                        </div>
-                    </div>
-                    <div class="skillBoxes__box">
-                        <h4>Design</h4>
-                        <h5 class="skillBoxes__box__skillName">Illustrator</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__60"></div>
-                        </div>
-                        <h5 class="skillBoxes__box__skillName">Photoshop</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__80"></div>
-                        </div>
-                        <h5 class="skillBoxes__box__skillName">Sketch</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__60"></div>
-                        </div>
-                    </div>
-                    <div class="skillBoxes__box">
-                        <h4>Others</h4>
-                        <h5 class="skillBoxes__box__skillName">Cooking</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__80"></div>
-                        </div>
-                        <h5 class="skillBoxes__box__skillName">Guitar</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__60"></div>
-                        </div>
-                        <h5 class="skillBoxes__box__skillName">Japanese</h5>
-                        <div class="skillBoxes__box__bar">
-                            <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__100"></div>
+                        <div class="contentBox__image contentBox__image--project">
+                            <img src="./assets/img/project01/mockup.jpg" alt="profile_image">
                         </div>
                     </div>
                 </div>
-                <footer>
+                <footer id="footer">
                     Copyright &#169 Shuhei Shagawa 2018
                 </footer>
             </div>
@@ -165,6 +125,24 @@
 <script src="assets/js/jq_min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
 <script src="assets/js/jquery.smoothState.min.js"></script>
+<script src="./assets/js/footer.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        letterAnimeTl = new TimelineLite();
+        letterAnimeTl.to("#textline", 5, {
+            y: "300px",
+        });
+        letterAnimeTl.to("#textline", 1, {
+            opacity: 0
+        });
+        letterAnimeTl.to("#cover", .1, {
+            opacity: 0
+        });
+        letterAnimeTl.to("#lineTop", .1, {
+            opacity: 1
+        });
+    })
+</script>
 
 </html>

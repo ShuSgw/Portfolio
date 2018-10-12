@@ -1,0 +1,54 @@
+.tags {
+    padding-top: .8em;
+}
+
+.tags__item {
+    display: inline-block;
+    border: 1.5px solid #f2f2f2;
+    border-radius: 5px;
+
+    color: white;
+    padding: 5px 10px 5px 28px;
+    margin: 3px 5px 3px 0;
+    font-size: .9em;
+    position: relative;
+}
+
+.tags__item:before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(0%, -50%);
+}
+
+.blue:before {
+    background: blue;
+}
+
+.pink:before {
+    background: pink;
+}
+
+.red:before {
+    background: red;
+}
+
+.green:before {
+    background: green;
+}
+
+.purple:before {
+    background: purple;
+}
+
+.orange:before {
+    background: orange;
+}
+
+.yellow:before {
+    background: yellow;
+}

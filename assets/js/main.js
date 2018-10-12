@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var $page = $("#wrapper");
   var $container = $(".container");
   var tl = new TimelineLite();
@@ -6,21 +6,36 @@ $(document).ready(function() {
   // when each page is loaded
   tl.fromTo(
     $(".animationDiv__box:eq(0)"),
-    speed,
-    {autoAlpha: 0, right: "0%", top: "0%"},
-    {autoAlpha: 1, backgroundColor: "black", height: "100%", width: "25%"}
+    speed, {
+      autoAlpha: 0,
+      right: "0%",
+      top: "0%"
+    }, {
+      autoAlpha: 1,
+      backgroundColor: "black",
+      height: "100%",
+      width: "25%"
+    }
   );
   tl.fromTo(
     $(".animationDiv__box:eq(1)"),
-    speed,
-    {autoAlpha: 0, right: "25%", bottom: "0%"},
-    {autoAlpha: 1, backgroundColor: "black", height: "100%", width: "25%"}
+    speed, {
+      autoAlpha: 0,
+      right: "25%",
+      bottom: "0%"
+    }, {
+      autoAlpha: 1,
+      backgroundColor: "black",
+      height: "100%",
+      width: "25%"
+    }
   );
   tl.fromTo(
     $(".animationDiv__box:eq(2)"),
-    speed,
-    {autoAlpha: 0, right: "50%"},
-    {
+    speed, {
+      autoAlpha: 0,
+      right: "50%"
+    }, {
       autoAlpha: 1,
       backgroundColor: "black",
       left: "25%",
@@ -30,9 +45,16 @@ $(document).ready(function() {
   );
   tl.fromTo(
     $(".animationDiv__box:eq(3)"),
-    speed,
-    {autoAlpha: 0, left: "0%", bottom: "0%"},
-    {autoAlpha: 1, backgroundColor: "black", height: "100%", width: "25%"}
+    speed, {
+      autoAlpha: 0,
+      left: "0%",
+      bottom: "0%"
+    }, {
+      autoAlpha: 1,
+      backgroundColor: "black",
+      height: "100%",
+      width: "25%"
+    }
   );
   // flashing
   tl.to($(".animationDiv__box:eq(0)"), 0.1, {
@@ -66,7 +88,7 @@ $(document).ready(function() {
   tl.to($(".contents"), 1, {
     autoAlpha: 1,
     // 終了と同時にアニメーションdivを消す
-    onComplete: function() {
+    onComplete: function () {
       $(".animationDiv__box").remove();
     }
   });
@@ -76,7 +98,7 @@ $(document).ready(function() {
     prefetch: true,
     onStart: {
       duration: 120,
-      render: function($container) {
+      render: function ($container) {
         console.log("1");
         tl.to($(".contents"), 1, {
           autoAlpha: 0
@@ -87,16 +109,16 @@ $(document).ready(function() {
       // onReady = when the new page open
       //一度ページは読み込まれる
       duration: 1200,
-      render: function($container, $newContent) {
+      render: function ($container, $newContent) {
         $container.html($newContent);
         console.log("2");
       }
     },
-    onAfter: function($container) {
+    onAfter: function ($container) {
       console.log("3");
     }
   }),
-    (smoothState = $page.smoothState(options).data("smoothState"));
+  (smoothState = $page.smoothState(options).data("smoothState"));
   //
   //
   // rotate animation
@@ -134,7 +156,7 @@ $(document).ready(function() {
     })
     .to(nav, 0.4, {
       display: "block",
-      position: "absolute",
+      position: "fixed",
       right: "0%",
       top: "0%",
       ease: Power4.easeOut,
@@ -144,12 +166,11 @@ $(document).ready(function() {
   //   display: "block",
   //   ease: Power4.easeOut
   // });
-  humBtn.click(function() {
+  humBtn.click(function () {
     menuToggle.reversed() ? menuToggle.restart() : menuToggle.reverse();
   });
 
   // drop shadow animation
-
   if ($(window).width() > 1024) {
     // logo mobile and desktop
     // logo background animation
@@ -159,7 +180,7 @@ $(document).ready(function() {
     //     'px ' + rYP / 12 +
     //     'px rgba(0,159,227,.3)');
 
-    $(".wrapper").mousemove(function(e) {
+    $(".wrapper").mousemove(function (e) {
       var rXP = e.pageX - this.offsetLeft - $(this).width() / 2;
       var rYP = e.pageY - this.offsetTop - $(this).height() / 2;
       $(".titleBox__title").css(
@@ -171,4 +192,31 @@ $(document).ready(function() {
       //     rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.1)')
     });
   }
+  //projectMenu
+  var projectMenu = $("#projectMenu");
+  var projectMenuBtn = $(".projectMenuBtn");
+  var arrow = $(".arrow");
+  var projectMenuToggle = new TimelineMax({
+    paused: true,
+    reversed: true
+  });
+  projectMenuToggle
+    .to(projectMenuBtn, 0.1, {
+      display: "none"
+    })
+    .to(projectMenu, 1, {
+      display: "block",
+      position: "fixed",
+      left: "0%",
+      top: "0%",
+      ease: Power4.easeOut,
+      width: "100%"
+    });
+
+  projectMenuBtn.click(function () {
+    projectMenuToggle.restart();
+  });
+  arrow.click(function () {
+    projectMenuToggle.reverse();
+  });
 });

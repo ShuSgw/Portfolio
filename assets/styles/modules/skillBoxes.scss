@@ -2,20 +2,31 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 2em;
+    color: white;
+
+    @include pc {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
-h4 {
-    width: 95%;
-    margin: 0 auto;
-    font-size: 1.2em;
+.skillBoxs__title {
+    font-size: 2em;
+    width: 100%;
 }
 
 .skillBoxes__box {
-    background: yellow;
+    background: blue;
     width: 100%;
     padding: 1em 0;
     display: flex;
     flex-flow: column;
+
+    @include pc {
+        padding: 1.66%;
+        width: 30%;
+    }
 }
 
 .skillBoxes__box__skillName {

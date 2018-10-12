@@ -1,208 +1,111 @@
-// .projects {
-//     position: relative;
-
-//     &:before {
-//         content: "";
-//         background: $color-main;
-//         position: absolute;
-//         top: 0;
-//         width: 100%;
-//         height: 100%;
-//         clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
-//     }
-
-//     // projects list
-//     &:nth-of-type(1) {
-//         position: relative;
-//         width: 100%;
-//         height: 100%;
-//     }
-
-//     &:nth-of-type(2) {
-//         background: #ddd url("../img/project00/01.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-
-//     &:nth-of-type(3) {
-//         background: #ddd url("../img/project03/mockup.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-
-//     &:nth-of-type(4) {
-//         background: #ddd url("../img/project01/01.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-
-//     &:nth-of-type(5) {
-//         background: #ddd url("../img/project02/mockup.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-
-//     &:nth-of-type(6) {
-//         background: #ddd url("../img/project04/mockup.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-
-//     &:nth-of-type(7) {
-//         background: #ddd url("../img/project07/01.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-
-//     &:nth-of-type(8) {
-//         background: #ddd url("../img/project05/mail_design.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-
-//     &:nth-of-type(9) {
-//         background: #ddd url("../img/project06/posters.jpg") no-repeat center center;
-//         background-size: auto 100%;
-//         background-size: cover;
-//     }
-// }
-
-
 .main {
-    width: 90%;
-    height: 100%;
-    max-width: $contentMax;
+    width: 92.5%;
     margin: 0 auto;
+    position: relative;
+    background: red;
+
+    @include pc {
+        width: $contentMax;
+    }
+}
+
+// For contact modifier
+.main--contact {
+    height: 100vh;
+}
+
+.contentBox {
+    background: yellow;
+    position: relative;
+    padding-top: 29%;
+    color: white;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    justify-content: space-between;
-    align-items: space-between;
-    align-content: space-around;
-    z-index: 999;
+
+    @include tab {
+        padding-top: 15%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    @include pc {
+        padding-top: 15%;
+    }
 }
 
-.main--blockLists {
-    width: 70%;
-    height: 70%;
+//modifier
+.contentBox--project {
+    @include pc {
+        padding-top: 12%;
+    }
 }
 
-.main--about {
-    top: 20%;
-    padding: 0 0 3em 0;
-    // background: red;
-    max-height: initial;
-    height: initial;
-    display: block;
-    background: blue;
-}
+.contentBox__image {
+    width: 280px;
 
-.main__blockList {
-    position: relative;
-    overflow: hidden;
-    z-index: 9999999;
-    width: 50%;
-    max-width: 120px;
+    @include pc {
+        max-width: 400px;
+        order: 2;
+    }
 
     img {
         width: 100%;
+        height: 100%;
     }
 }
 
-.main__blockList__mask {
-    position: absolute;
-    bottom: 0;
-    background: black;
+// modifier
+.contentBox__image--project {
     width: 100%;
-    height: 0;
-    transition: all .1s ease-out;
+    padding-top: 2em;
+
+    @include pc {
+        max-width: 100%;
+        order: 2;
+    }
 }
 
-.main__blockList__mask__text {
-    margin: 0 auto;
-    text-align: center;
-    width: 90%;
-    opacity: 0;
-    position: absolute;
-    top: 65%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    color: white;
-    font-size: 2em;
-    padding-left: 0.2em;
-    z-index: 999999;
-    font-size: 1em;
-}
-
-.main__box {
-    width: 55%;
-    height: 40%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    // background: red;
-}
-
-.main__title {
-    font-size: 1.5em;
-    padding: 0 0 .5em 0;
-    width: 100%;
-    color: white;
-    // background: pink;
-    // padding: 2em 0 .6em 0;
-}
-
-.main__title--about {
-    padding: 2em 0 0.6em 0;
+.contentBox__textBox {
+    padding: 2em 0;
     background: red;
-}
 
-.main__texts {
-    font-size: 1em;
-    padding-bottom: 1em;
-    line-height: 1.7;
-    color: white;
-    width: 100%;
-    // background: blue;
-}
-
-.main__texts__title {
-    font-size: 1.5em;
-    width: 100%;
-    color: white;
-    // background: red;
-}
-
-.main__texts--about {}
-
-.text--contact {
-    width: 60%;
-    float: left;
-}
-
-.main__links {
-    color: white;
-    text-align: center;
-    display: inline-block;
-    background: black;
-    padding: 1em;
-    margin: 0 auto;
-    font-size: .7em;
-
-    &:hover {
+    @include tab {
         background: black;
     }
+
+    @include pc {
+        width: 100%;
+        padding-right: 44px;
+        order: 1;
+    }
 }
 
-.main__image {
-    width: 70%;
-    height: 70%;
-    position: relative;
+// modifier
+.contentBox__textBox--project {
+    @include pc {
+        padding-right: 0;
+    }
+}
+
+// textBox modifier
+.contentBox__textBox--about {
+    @include pc {
+        width: 700px;
+    }
+}
+
+.contentBox__textBox__title {
+    font-size: 2.4em;
+    padding-bottom: .7em;
+
+    @include pc {
+        font-size: 4em;
+    }
 }
 
 .email {
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0.3em 0;
     position: relative;
 

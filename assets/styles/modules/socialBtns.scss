@@ -1,0 +1,42 @@
+.socialBtns {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    // background: red;
+    flex: 1;
+
+    // background: red;
+    @include tab {
+        background: pink;
+        order: 3;
+        // parent flex
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    @include pc {
+        order: 3;
+        // parent flex
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+.socialBtns__socialIcon {
+    font-size: 2.3em;
+    margin-bottom: 1em;
+
+    @include tab {
+        padding: 0 0 0 1em;
+        margin-bottom: 0;
+    }
+
+    @include pc {
+        padding: .5em 0 0 1em;
+        margin-bottom: 0;
+        font-size: 2.4em;
+    }
+}
