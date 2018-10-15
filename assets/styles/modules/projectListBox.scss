@@ -1,0 +1,124 @@
+$font-numbers-pc: 7em;
+$font-numbers-tab: 5em;
+
+.projectListBox {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+    height: 50%;
+}
+
+.projectListBox__image {
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%) rotate(12deg);
+    position: absolute;
+    width: 80%;
+    filter: brightness(70%);
+    transition: all .2s;
+    cursor: pointer;
+    text-align: center;
+    animation: floating 1s ease-in-out infinite alternate;
+
+    img {
+        width: 100%;
+        opacity: 0;
+    }
+
+    &:hover {
+        filter: brightness(100%);
+        transition: all .2s;
+    }
+
+    @include tab {
+        width: 40%;
+    }
+
+    @include pc {
+        width: 30%;
+    }
+}
+
+.projectListBox__title {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: #DE0000;
+    width: 100%;
+    font-family: 'Anton',
+        sans-serif;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.projectListBox__title__num {
+    font-size: 6em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 90px;
+    width: 100%;
+
+    @include tab {
+        width: 60px;
+        font-size: $font-numbers-tab;
+    }
+
+    @include pc {
+        font-size: $font-numbers-pc;
+        width: 80px;
+    }
+}
+
+//modifier
+.projectListBox__title__num--num1 {
+    max-width: 80px;
+    width: 100%;
+
+    @include tab {
+        width: 55px;
+    }
+
+    @include pc {
+        width: 70px;
+    }
+}
+
+.projectListBox__title__name {
+    text-align: right;
+    line-height: 1.1;
+    font-size: 2.62em;
+
+    @include tab {
+        font-size: $font-numbers-tab;
+    }
+
+    @include pc {
+        font-size: 6.5em;
+    }
+}
+
+.zero {
+    position: absolute;
+    font-family: 'Anton',
+        sans-serif;
+    font-size: 6em;
+    color: #DE0000;
+    z-index: 1;
+    top: 50%;
+    left: 3.5%;
+    transform: translate(0, -50%);
+
+    @include tab {
+        font-size: $font-numbers-tab;
+    }
+
+    @include pc {
+        font-size: $font-numbers-pc;
+    }
+}

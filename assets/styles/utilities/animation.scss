@@ -43,3 +43,10 @@
         opacity: 1;
     }
 }
+
+// floating animation
+@keyframes floating {
+    100% {
+        transform: translate(50%, -53%) rotate(12deg);
+    }
+}

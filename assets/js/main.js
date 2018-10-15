@@ -183,40 +183,16 @@ $(document).ready(function () {
     $(".wrapper").mousemove(function (e) {
       var rXP = e.pageX - this.offsetLeft - $(this).width() / 2;
       var rYP = e.pageY - this.offsetTop - $(this).height() / 2;
+      //just one
       $(".titleBox__title").css(
         "text-shadow",
-        rXP / 10 + "px " + rYP / 12 + "px rgba(0,0,0,.3)"
+        rXP / 10 + "px " + rYP / 12 + "px rgba(206, 60, 40, 0.3)"
       );
-      // console.log('text-shadow', rYP / 8 +
-      //     'px ' +
-      //     rXP / 10 + 'px rgba(255,237,0, 0.1), ' + rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,159,227,.1)')
+      // $(".titleBox__title").css(
+      //   'text-shadow', rYP / 8 +
+      //   'px ' +
+      //   rXP / 10 + 'px rgb(206, 60, 40, 0.1), ' + rXP / 10 + 'px ' + rYP / 12 + 'px rgba(0,0,0,.3)'
+      // );
     });
   }
-  //projectMenu
-  var projectMenu = $("#projectMenu");
-  var projectMenuBtn = $(".projectMenuBtn");
-  var arrow = $(".arrow");
-  var projectMenuToggle = new TimelineMax({
-    paused: true,
-    reversed: true
-  });
-  projectMenuToggle
-    .to(projectMenuBtn, 0.1, {
-      display: "none"
-    })
-    .to(projectMenu, 1, {
-      display: "block",
-      position: "fixed",
-      left: "0%",
-      top: "0%",
-      ease: Power4.easeOut,
-      width: "100%"
-    });
-
-  projectMenuBtn.click(function () {
-    projectMenuToggle.restart();
-  });
-  arrow.click(function () {
-    projectMenuToggle.reverse();
-  });
 });

@@ -126,7 +126,7 @@
     cursor: pointer;
     bottom: 5%;
     left: 3%;
-    z-index: 9999999;
+    z-index: 9;
     backface-visibility: hidden;
 
     @include pc {
@@ -144,7 +144,6 @@
         transform: translate(50%, 170%) rotate(0deg);
     }
 
-    @import url('https://fonts.googleapis.com/css?family=Anton');
 
     .projectMenuBtn__text {
         color: silver;

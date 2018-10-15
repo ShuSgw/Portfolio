@@ -2,19 +2,27 @@
     position: absolute;
     width: 90%;
     max-width: $contentMax;
-    top: 50%;
+    top: 55%;
     right: 50%;
     transform: translate(50%, -50%);
     text-align: center;
     color: white;
+
+    @include pc {
+        top: 50%;
+    }
 }
 
 .titleBox__title {
     font-size: 3em;
     padding: .5em 0;
+    letter-spacing: 2px;
+    font-family: 'Anton',
+        sans-serif;
 
     @include pc {
-        font-size: 5em;
+        letter-spacing: 4px;
+        font-size: 6em;
     }
 }
 
@@ -23,6 +31,6 @@
     line-height: 1.5;
 
     @include pc {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 }
