@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
         <div class="animationDiv">
             <div class="animationDiv__box"></div>
             <div class="animationDiv__box"></div>
@@ -122,27 +122,5 @@
             </div>
         </div>
 </body>
-<script src="assets/js/jq_min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-<script src="assets/js/jquery.smoothState.min.js"></script>
-<script src="./assets/js/footer.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-    $(document).ready(function () {
-        letterAnimeTl = new TimelineLite();
-        letterAnimeTl.to("#textline", 5, {
-            y: "300px",
-        });
-        letterAnimeTl.to("#textline", 1, {
-            opacity: 0
-        });
-        letterAnimeTl.to("#cover", .1, {
-            opacity: 0
-        });
-        letterAnimeTl.to("#lineTop", .1, {
-            opacity: 1
-        });
-    })
-</script>
 
 </html>

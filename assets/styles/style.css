@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Anton");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 @import url("https://fonts.googleapis.com/css?family=Anton");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display");
 html,
 body,
 div,
@@ -154,7 +156,8 @@ p {
   height: 100%;
   display: none;
   z-index: 999;
-  max-width: 350px; }
+  max-width: 350px;
+  font-family: 'Playfair Display', serif; }
   @media (min-width: 1024px) {
     .nav {
       background: transparent;
@@ -206,7 +209,7 @@ p {
 .hamburger {
   width: 40px;
   height: 25px;
-  position: fixed;
+  position: absolute;
   cursor: pointer;
   top: 5%;
   right: 4%;
@@ -233,16 +236,15 @@ p {
   .hamburger__line:nth-child(3) {
     bottom: 0; }
 
-.wrapper {
+#wrapper {
   position: relative; }
-  .wrapper .container {
+  #wrapper .container {
     width: 100%;
     height: 100vh;
     margin: 0 auto;
     position: relative; }
 
 .contents {
-  opacity: 0;
   position: relative; }
 
 .contents__logo {
@@ -269,14 +271,11 @@ p {
   position: absolute;
   width: 90%;
   max-width: 1024px;
-  top: 55%;
+  top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
   text-align: center;
   color: white; }
-  @media (min-width: 1024px) {
-    .titleBox {
-      top: 50%; } }
 
 .titleBox__title {
   font-size: 3em;
@@ -290,7 +289,8 @@ p {
 
 .titleBox__subTitle {
   font-size: 1em;
-  line-height: 1.5; }
+  line-height: 1.5;
+  font-family: 'Playfair Display', serif; }
   @media (min-width: 1024px) {
     .titleBox__subTitle {
       font-size: 2em; } }
@@ -911,4 +911,5 @@ footer {
     transform: translate(50%, -53%) rotate(12deg); } }
 
 .animationDiv__box {
-  position: fixed; }
+  position: fixed;
+  z-index: 9999999999; }

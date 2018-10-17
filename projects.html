@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
         <div class="animationDiv">
             <div class="animationDiv__box"></div>
             <div class="animationDiv__box"></div>
@@ -161,8 +161,8 @@
             <div class="contents fullpage">
                 <section class="section projects">
                     <div class="main main--project">
-                        <div class="projectListBox">
-                            <a href="project_1.html">
+                        <a href="project_1.html">
+                            <div class="projectListBox">
                                 <div class="projectListBox__image">
                                     <img src="./assets/img/project.png" alt="">
                                 </div>
@@ -170,8 +170,8 @@
                                     <div class="projectListBox__title__num projectListBox__title__num--changed projectListBox__title__num--num1">1</div>
                                     <h3 class="projectListBox__title__name">Sharable Birthday Card</h3>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </section>
                 <section class="section projects">
@@ -216,114 +216,6 @@
             </div>
         </div>
 </body>
-<script src="assets/js/jq_min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-<script src="assets/js/jquery.smoothState.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
-<script src="assets/js/main.js"></script>
-<script>
-    // fullpage
-    $(function () {
-        var num = $('.projectListBox__title__num--changed');
-        var title = $('.projectListBox__title__name');
-        var image = $('.projectListBox__image').children('img');
-        var zero = $('.zero');
-        tlProject = new TimelineMax({});
-        $('.fullpage').fullpage({
-            scrollingSpeed: 400,
-            menu: '#projectMenu',
-            anchors: ['project1', 'project2', 'project3', 'project4', 'project5', 'project6'],
 
-            onLeave: function (index, nextIndex) {
-                tlProject
-                    .to([num, title], .1, {
-                        y: "-200",
-                        ease: Linear.easeNone
-                    })
-                    .to(image, .1, {
-                        width: "0%",
-                        ease: Linear.easeNone
-                    }, 0)
-                    .to(image, .1, {
-                        opacity: "0"
-                    })
-            },
-            afterLoad: function (anchorLink, afterIndex) {
-                tlProject
-                    .fromTo(
-                        [num, title], .1, {
-                            y: "50",
-                            ease: Linear.easeNone
-                        }, {
-                            y: "0",
-                            ease: Linear.easeNone
-                        })
-                    .to(image, .1, {
-                        opacity: "1"
-                    })
-                    .to(image, .1, {
-                        width: "100%",
-                        ease: Linear.easeNone
-                    });
-            }
-        });
-        $(".main__blockList").each(function (index, element) {
-            var projectListHv = new TimelineLite({
-                paused: true
-            });
-            projectListHv.to($(this).find(".main__blockList__mask"), .1, {
-                height: "100%",
-            });
-            projectListHv.to($(this).find(".main__blockList__mask__text"), 1, {
-                opacity: 1,
-                top: "50%",
-                ease: Elastic.easeOut
-            });
-            element.animation = projectListHv;
-        });
-
-        $(".main__blockList").hover(over, out);
-
-        function over() {
-            this.animation.play()
-        };
-
-        function out() {
-            this.animation.reverse(-1)
-        };
-        //projectMenu
-        var projectMenu = $("#projectMenu");
-        var projectMenuBtn = $(".projectMenuBtn");
-        var arrow = $(".arrow");
-        var lists = $(".projectMenu__li");
-
-        var projectMenuToggle = new TimelineMax({
-            paused: true,
-            reversed: true
-        });
-        projectMenuToggle
-            .to(projectMenuBtn, 0.1, {
-                display: "none"
-            })
-            .to(projectMenu, .8, {
-                display: "block",
-                position: "fixed",
-                left: "0%",
-                top: "0%",
-                ease: Power4.easeOut,
-                width: "100%"
-            });
-
-        projectMenuBtn.click(function () {
-            projectMenuToggle.restart();
-        });
-        arrow.click(function () {
-            projectMenuToggle.reverse();
-        });
-        lists.click(function () {
-            projectMenuToggle.reverse();
-        });
-    });
-</script>
 
 </html>

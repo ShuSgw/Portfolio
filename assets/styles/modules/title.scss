@@ -2,15 +2,11 @@
     position: absolute;
     width: 90%;
     max-width: $contentMax;
-    top: 55%;
+    top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
     text-align: center;
     color: white;
-
-    @include pc {
-        top: 50%;
-    }
 }
 
 .titleBox__title {
@@ -29,6 +25,8 @@
 .titleBox__subTitle {
     font-size: 1em;
     line-height: 1.5;
+    font-family: 'Playfair Display',
+        serif;
 
     @include pc {
         font-size: 2em;
