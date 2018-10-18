@@ -129,6 +129,7 @@ table {
 
 body {
   background: #2D2D2D;
+  height: 100%;
   margin: 0%;
   padding: 0; }
 
@@ -148,6 +149,11 @@ p {
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background: silver; }
+
+.samplenav {
+  background: red;
+  position: absolute;
+  z-index: 999999999999; }
 
 .nav {
   position: relative;
@@ -350,8 +356,7 @@ p {
       order: 2; } }
 
 .contentBox__textBox {
-  padding: 2em 0;
-  background: red; }
+  padding: 2em 0; }
   @media (min-width: 680px) and (max-width: 1024px) {
     .contentBox__textBox {
       background: black; } }
@@ -371,7 +376,7 @@ p {
 
 .contentBox__textBox__title {
   font-size: 2.4em;
-  padding-bottom: .7em; }
+  padding-bottom: 0.7em; }
   @media (min-width: 1024px) {
     .contentBox__textBox__title {
       font-size: 4em; } }

@@ -2,6 +2,17 @@ $(document).ready(function () {
   startAnimation();
   titleAnimation();
   openNav();
+  loading();
+  var url = location.href;
+  var host = location.hostname;
+  var path = location.pathname;
+  var query = location.search;
+  var protocol = location.hash;
+  console.log(url);
+  console.log(host);
+  console.log(path);
+  console.log(query);
+  console.log(protocol);
   $(function () {
     var options = {
         prefetch: true,
@@ -147,6 +158,8 @@ $(document).ready(function () {
   //
   //
   // humbNav with GASP
+  console.log("hello");
+
   function openNav() {
     var humBtn = $(".hamburger");
     var humbs = $(".hamburger__line");
@@ -403,4 +416,9 @@ $(document).ready(function () {
     });
   }
 
+  function loading() {
+    $(".nav__box__list").click(function () {
+      console.log("loading");
+    });
+  }
 });
