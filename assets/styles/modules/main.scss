@@ -3,6 +3,7 @@
     margin: 0 auto;
     position: relative;
 
+
     @include pc {
         width: $contentMax;
     }
@@ -17,11 +18,10 @@
 
 // For contact modifier
 .main--contact {
-    height: 100vh;
+    height: 100%;
 }
 
 .contentBox {
-    background: yellow;
     position: relative;
     padding-top: 29%;
     color: white;
@@ -41,6 +41,7 @@
 
 //modifier
 .contentBox--project {
+
     @include pc {
         padding-top: 12%;
     }
@@ -48,6 +49,7 @@
 
 .contentBox__image {
     width: 280px;
+    opacity: .8;
 
     @include pc {
         max-width: 400px;
@@ -111,7 +113,7 @@
 
 .email {
     display: inline-block;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0.3em 0;
     position: relative;
 

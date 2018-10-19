@@ -150,11 +150,6 @@ p {
 .fp-slidesNav ul li a span {
   background: silver; }
 
-.samplenav {
-  background: red;
-  position: absolute;
-  z-index: 999999999999; }
-
 .nav {
   position: relative;
   background: black;
@@ -162,8 +157,10 @@ p {
   height: 100%;
   display: none;
   z-index: 999;
-  max-width: 350px;
   font-family: 'Playfair Display', serif; }
+  @media (min-width: 680px) and (max-width: 1024px) {
+    .nav {
+      max-width: 250px; } }
   @media (min-width: 1024px) {
     .nav {
       background: transparent;
@@ -177,17 +174,16 @@ p {
 
 .nav__box {
   position: absolute;
-  top: 37%;
-  transform: translate(0, -50%); }
+  top: 110px; }
   @media (min-width: 1024px) {
     .nav__box {
+      top: 37%;
       position: relative;
-      transform: translate(0, 0);
       display: flex;
       justify-content: space-between; } }
 
 .nav__box__list {
-  font-size: 1.5em;
+  font-size: 1.3em;
   padding: 3.5em 1em 0 1.5em; }
   .nav__box__list:first-of-type {
     padding-top: 0; }
@@ -215,7 +211,7 @@ p {
 .hamburger {
   width: 40px;
   height: 25px;
-  position: absolute;
+  position: fixed;
   cursor: pointer;
   top: 5%;
   right: 4%;
@@ -246,7 +242,6 @@ p {
   position: relative; }
   #wrapper .container {
     width: 100%;
-    height: 100vh;
     margin: 0 auto;
     position: relative; }
 
@@ -315,10 +310,9 @@ p {
   margin: 0 auto; }
 
 .main--contact {
-  height: 100vh; }
+  height: 100%; }
 
 .contentBox {
-  background: yellow;
   position: relative;
   padding-top: 29%;
   color: white;
@@ -338,7 +332,8 @@ p {
     padding-top: 12%; } }
 
 .contentBox__image {
-  width: 280px; }
+  width: 280px;
+  opacity: .8; }
   @media (min-width: 1024px) {
     .contentBox__image {
       max-width: 400px;
@@ -383,7 +378,7 @@ p {
 
 .email {
   display: inline-block;
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 0.3em 0;
   position: relative; }
   .email:after {
@@ -498,6 +493,7 @@ p {
 
 .skillBoxes {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 2em;
@@ -512,8 +508,9 @@ p {
   width: 100%; }
 
 .skillBoxes__box {
-  background: blue;
+  display: none;
   width: 100%;
+  height: 100%;
   padding: 1em 0;
   display: flex;
   flex-flow: column; }
@@ -657,13 +654,16 @@ p {
 
 .logoBack {
   z-index: -1;
-  width: 50%;
+  width: 90%;
   max-width: 600px;
   opacity: 0.05;
-  position: absolute;
+  position: fixed;
   top: 50%;
   right: 50%;
   animation: rotating 10s linear infinite; }
+  @media (min-width: 1024px) {
+    .logoBack {
+      width: 50%; } }
   .logoBack .st0 {
     fill: none;
     stroke: #C0C0C0;
@@ -728,19 +728,28 @@ p {
   left: 0;
   height: 100%;
   display: none;
-  max-width: 300px;
   z-index: 999;
   padding-top: 1.1em; }
   @media (min-width: 1024px) {
     #projectMenu {
       max-width: 500px; } }
+  @media (min-width: 680px) and (max-width: 1024px) {
+    #projectMenu {
+      max-width: 400px; } }
+  @media (max-width: 480px) {
+    #projectMenu {
+      max-width: 300px; } }
   #projectMenu li {
-    height: 7.7%;
+    height: 10%;
+    max-height: 50px;
     padding: 5% 5.5%;
     position: relative; }
     @media (min-width: 1024px) {
       #projectMenu li {
         max-height: 40px; } }
+    @media (max-width: 480px) {
+      #projectMenu li {
+        height: 7%; } }
     #projectMenu li:after {
       content: "";
       width: 90%;
@@ -779,17 +788,19 @@ p {
         transition: all .1s;
         position: relative;
         z-index: 2; }
-      #projectMenu li a:hover .sampleImg {
-        transition: all .1s;
-        position: relative;
-        z-index: 2; }
     #projectMenu li .sampleText {
+      position: relative;
       font-size: 1.2em;
-      width: 45%; }
+      z-index: 2; }
     #projectMenu li .sampleImg {
+      position: absolute;
       display: block;
-      width: 50%;
-      align-self: baseline; }
+      top: 0;
+      right: 50%;
+      top: 50%;
+      transform: translate(50%, -50%);
+      width: 25%;
+      max-width: 50px; }
     #projectMenu li h5 {
       font-size: 1em;
       padding-bottom: .3em;
@@ -797,6 +808,9 @@ p {
     #projectMenu li p {
       font-size: .5em;
       color: white; }
+      @media (max-width: 480px) {
+        #projectMenu li p {
+          display: none; } }
 
 .arrow {
   cursor: pointer;
@@ -882,7 +896,13 @@ footer {
   text-align: center;
   padding: 2em 0;
   font-size: .7em;
-  color: white; }
+  color: white;
+  bottom: 0;
+  width: 100%; }
+
+.stickBtm {
+  position: absolute;
+  bottom: 0; }
 
 @keyframes rotating {
   from {

@@ -2,7 +2,7 @@ $(document).ready(function () {
   startAnimation();
   titleAnimation();
   openNav();
-  loading();
+  removeVh();
   var url = location.href;
   var host = location.hostname;
   var path = location.pathname;
@@ -16,7 +16,7 @@ $(document).ready(function () {
   $(function () {
     var options = {
         prefetch: true,
-        cacheLength: 2,
+        cacheLength: 5,
         onStart: {
           duration: 10, // Duration of our animation
           render: function ($container) {
@@ -47,6 +47,7 @@ $(document).ready(function () {
             fullpage();
           }
           letterAnimation();
+          removeVh();
         }
       },
       smoothState = $('#wrapper').smoothState(options).data('smoothState');
@@ -190,7 +191,7 @@ $(document).ready(function () {
         right: "0%",
         top: "0%",
         ease: Power4.easeOut,
-        width: "75%"
+        width: "50%"
       });
     // .to(navLists, 0.1, {
     //   display: "block",
@@ -281,13 +282,13 @@ $(document).ready(function () {
       .to(projectMenuBtn, 0.1, {
         display: "none"
       })
-      .to(projectMenu, .8, {
+      .to(projectMenu, .1, {
         display: "block",
         position: "fixed",
         left: "0%",
         top: "0%",
         ease: Power4.easeOut,
-        width: "100%"
+        width: "70%",
       });
 
     projectMenuBtn.click(function () {
@@ -416,9 +417,11 @@ $(document).ready(function () {
     });
   }
 
-  function loading() {
-    $(".nav__box__list").click(function () {
-      console.log("loading");
-    });
+  function removeVh() {
+    // stop breaking design due to mobile addressBar
+    // if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
+    var hSize = $(window).height()
+    $('.js-viewPointHeigt').height(hSize);
+    // }
   }
 });

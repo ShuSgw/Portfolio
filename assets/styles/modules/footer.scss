@@ -3,4 +3,11 @@ footer {
     padding: 2em 0;
     font-size: .7em;
     color: white;
+    bottom: 0;
+    width: 100%;
+}
+
+.stickBtm {
+    position: absolute;
+    bottom: 0;
 }

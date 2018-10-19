@@ -5,7 +5,6 @@
     left: 0;
     height: 100%;
     display: none;
-    max-width: 300px;
     z-index: 999;
     padding-top: 1.1em;
 
@@ -14,13 +13,27 @@
         max-width: 500px;
     }
 
+    @include tab {
+        max-width: 400px;
+    }
+
+    @include sp {
+        max-width: 300px;
+    }
+
     li {
-        height: 7.7%;
+        height: 10%;
+        max-height: 50px;
+        // background: red;
         padding: 5% 5.5%;
         position: relative;
 
         @include pc {
             max-height: 40px;
+        }
+
+        @include sp {
+            height: 7%;
         }
 
         &:after {
@@ -71,23 +84,23 @@
                 position: relative;
                 z-index: 2;
             }
-
-            &:hover .sampleImg {
-                transition: all .1s;
-                position: relative;
-                z-index: 2;
-            }
         }
 
         .sampleText {
+            position: relative;
             font-size: 1.2em;
-            width: 45%;
+            z-index: 2;
         }
 
         .sampleImg {
+            position: absolute;
             display: block;
-            width: 50%;
-            align-self: baseline;
+            top: 0;
+            right: 50%;
+            top: 50%;
+            transform: translate(50%, -50%);
+            width: 25%;
+            max-width: 50px;
         }
 
         h5 {
@@ -99,6 +112,10 @@
         p {
             font-size: .5em;
             color: white;
+
+            @include sp {
+                display: none;
+            }
         }
 
     }

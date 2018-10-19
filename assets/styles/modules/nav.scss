@@ -1,9 +1,3 @@
-.samplenav {
-    background: red;
-    position: absolute;
-    z-index: 999999999999;
-}
-
 .nav {
     position: relative;
     background: black;
@@ -11,9 +5,12 @@
     height: 100%;
     display: none;
     z-index: 999;
-    max-width: 350px;
     font-family: 'Playfair Display',
         serif;
+
+    @include tab {
+        max-width: 250px;
+    }
 
     @include pc {
         background: transparent;
@@ -38,19 +35,18 @@
 // ul
 .nav__box {
     position: absolute;
-    top: 37%;
-    transform: translate(0, -50%);
+    top: 110px;
 
     @include pc {
+        top: 37%;
         position: relative;
-        transform: translate(0, 0);
         display: flex;
         justify-content: space-between;
     }
 }
 
 .nav__box__list {
-    font-size: 1.5em;
+    font-size: 1.3em;
     padding: 3.5em 1em 0 1.5em;
 
     &:first-of-type {
@@ -93,7 +89,7 @@
 .hamburger {
     width: 40px;
     height: 25px;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     top: 5%;
     right: 4%;

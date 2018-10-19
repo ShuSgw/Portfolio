@@ -71,7 +71,7 @@
                 </li>
             </ul>
         </nav>
-        <div class="container contents">
+        <div class="container contents js-viewPointHeigt">
             <div class="hamburger">
                 <span class="hamburger__line"></span>
                 <span class="hamburger__line"></span>
@@ -89,14 +89,9 @@
             </div>
 
             <ul id="projectMenu">
-                <div class="arrow">
-                    <span class="arrow__line"></span>
-                    <span class="arrow__line"></span>
-                    <span class="arrow__line"></span>
-                </div>
                 <li data-menuanchor="project1" class="active projectMenu__li">
                     <a href="#project1">
-                        <img class="sampleImg" src="assets/img/sample.jpg" alt="">
+                        <img class="sampleImg" src="assets/img/sample.png" alt="">
                         <div class="sampleText">
                             <h5>Shareable Birthday Card</h5>
                             <p>Web Development</p>
@@ -105,7 +100,7 @@
                 </li>
                 <li data-menuanchor="project2" class="active projectMenu__li">
                     <a href="#project2">
-                        <img class="sampleImg" src="assets/img/sample.jpg" alt="">
+                        <img class="sampleImg" src="assets/img/sample.png" alt="">
                         <div class="sampleText">
                             <h5>WordPress Theme</h5>
                             <p>Web Development / Design</p>
@@ -114,7 +109,7 @@
                 </li>
                 <li data-menuanchor="project3" class="active projectMenu__li">
                     <a href="#project3">
-                        <img class="sampleImg" src="assets/img/sample.jpg" alt="">
+                        <img class="sampleImg" src="assets/img/sample.png" alt="">
                         <div class="sampleText">
                             <h5>Pet Finder</h5>
                             <p>Web Development</p>
@@ -123,7 +118,7 @@
                 </li>
                 <li data-menuanchor="project4" class="active projectMenu__li">
                     <a href="#project4">
-                        <img class="sampleImg" src="assets/img/sample.jpg" alt="">
+                        <img class="sampleImg" src="assets/img/sample.png" alt="">
                         <div class="sampleText">
                             <h5>Let's Chat</h5>
                             <p>Web Development</p>
@@ -132,7 +127,7 @@
                 </li>
                 <li data-menuanchor="project5" class="active projectMenu__li">
                     <a href="#project5">
-                        <img class="sampleImg" src="assets/img/sample.jpg" alt="">
+                        <img class="sampleImg" src="assets/img/sample.png" alt="">
                         <div class="sampleText">
                             <h5>Haena Kim</h5>
                             <p>EC-Site Development</p>
@@ -141,7 +136,7 @@
                 </li>
                 <li data-menuanchor="project6" class="active projectMenu__li">
                     <a href="#project6">
-                        <img class="sampleImg" src="assets/img/sample.jpg" alt="">
+                        <img class="sampleImg" src="assets/img/sample.png" alt="">
                         <div class="sampleText">
                             <h5>Portfolio</h5>
                             <p>Web Development</p>
@@ -150,13 +145,18 @@
                 </li>
                 <li data-menuanchor="project1" class="active projectMenu__li">
                     <a href="#project7">
-                        <img class="sampleImg" src="assets/img/sample.jpg" alt="">
+                        <img class="sampleImg" src="assets/img/sample.png" alt="">
                         <div class="sampleText">
                             <h5>React To Do App</h5>
                             <p>Web Development</p>
                         </div>
                     </a>
                 </li>
+                <div class="arrow">
+                    <span class="arrow__line"></span>
+                    <span class="arrow__line"></span>
+                    <span class="arrow__line"></span>
+                </div>
             </ul>
             <div class="zero">0</div>
             <div class="contents fullpage">
@@ -221,7 +221,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
 <script src="assets/js/jquery.smoothState.min.js"></script>
-<!-- <script src="./assets/js/footer.js"></script> -->
 <script>
     $(function () {
         if (!$('.logoBack').length) {

@@ -95,13 +95,17 @@
 // background logo
 .logoBack {
     z-index: -1;
-    width: 50%;
+    width: 90%;
     max-width: 600px;
     opacity: 0.05;
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: 50%;
     animation: rotating 10s linear infinite;
+
+    @include pc {
+        width: 50%;
+    }
 
     .st0 {
         fill: none;
