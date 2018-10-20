@@ -184,7 +184,8 @@ p {
 
 .nav__box__list {
   font-size: 1.3em;
-  padding: 3.5em 1em 0 1.5em; }
+  padding: 3.5em 1em 0 1.5em;
+  opacity: 0; }
   .nav__box__list:first-of-type {
     padding-top: 0; }
   .nav__box__list a {
@@ -204,7 +205,8 @@ p {
   @media (min-width: 1024px) {
     .nav__box__list {
       padding: .9em 0;
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      opacity: 0; }
       .nav__box__list:first-of-type {
         padding-top: .9em; } }
 
@@ -214,8 +216,9 @@ p {
   position: fixed;
   cursor: pointer;
   top: 5%;
-  right: 4%;
-  z-index: 99999; }
+  right: -5%;
+  z-index: 99999;
+  opacity: 0; }
   @media (min-width: 1024px) {
     .hamburger {
       display: none; } }
@@ -243,7 +246,8 @@ p {
   #wrapper .container {
     width: 100%;
     margin: 0 auto;
-    position: relative; }
+    position: relative;
+    opacity: 0; }
 
 .contents {
   position: relative; }
@@ -575,6 +579,11 @@ p {
       flex-direction: row;
       align-items: center;
       justify-content: flex-end; } }
+  @media (max-width: 480px) {
+    .socialBtns {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start; } }
 
 .socialBtns__socialIcon {
   font-size: 2.3em;
@@ -588,15 +597,22 @@ p {
       padding: .5em 0 0 1em;
       margin-bottom: 0;
       font-size: 2.4em; } }
+  @media (max-width: 480px) {
+    .socialBtns__socialIcon {
+      padding-top: .5em;
+      padding-right: .3em;
+      margin-bottom: 0;
+      font-size: 2.4em; } }
 
 .logo {
   width: 25px;
   transform: scale(1.3);
   position: fixed;
   cursor: pointer;
-  top: 5%;
+  top: -10%;
   left: 4.2%;
-  z-index: 999; }
+  z-index: 999;
+  opacity: 0; }
   .logo #circle {
     transition: all 1s; }
   .logo .st0 {
@@ -729,7 +745,8 @@ p {
   height: 100%;
   display: none;
   z-index: 999;
-  padding-top: 1.1em; }
+  padding-top: 1.1em;
+  z-index: 999999; }
   @media (min-width: 1024px) {
     #projectMenu {
       max-width: 500px; } }
