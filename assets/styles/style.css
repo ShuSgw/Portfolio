@@ -280,13 +280,20 @@ p {
   right: 50%;
   transform: translate(50%, -50%);
   text-align: center;
-  color: white; }
+  color: white;
+  overflow: hidden; }
 
 .titleBox__title {
+  position: relative;
   font-size: 3em;
   padding: .5em 0;
   letter-spacing: 2px;
-  font-family: 'Anton', sans-serif; }
+  font-family: 'Anton', sans-serif;
+  overflow: hidden; }
+  @media (max-width: 480px) {
+    .titleBox__title {
+      letter-spacing: 4px;
+      font-size: 2.2em; } }
   @media (min-width: 1024px) {
     .titleBox__title {
       letter-spacing: 4px;
@@ -347,8 +354,7 @@ p {
     height: 100%; }
 
 .contentBox__image--project {
-  width: 100%;
-  padding-top: 2em; }
+  width: 100%; }
   @media (min-width: 1024px) {
     .contentBox__image--project {
       max-width: 100%;
@@ -356,9 +362,6 @@ p {
 
 .contentBox__textBox {
   padding: 2em 0; }
-  @media (min-width: 680px) and (max-width: 1024px) {
-    .contentBox__textBox {
-      background: black; } }
   @media (min-width: 1024px) {
     .contentBox__textBox {
       width: 100%;
@@ -390,12 +393,48 @@ p {
     bottom: -10%;
     left: 0;
     content: "";
-    background: grey;
     transition: all 1s;
     width: 0%; }
   .email:hover::after {
     width: 100%;
     height: 2px; }
+
+.contentBox__details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0; }
+
+.projectOrderBtn {
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative; }
+  .projectOrderBtn .fas {
+    font-size: 2em;
+    padding: .5em 0;
+    color: white; }
+    .projectOrderBtn .fas:hover {
+      color: black;
+      transition: .4s; }
+
+.visitingBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; }
+
+.visitingBtns__visitingBtn a {
+  display: inline-block;
+  padding: 0.7em 1.7em;
+  text-decoration: none;
+  background: black;
+  color: #FFF;
+  border-radius: 5px;
+  margin: 0 .5em;
+  transition: .7s; }
+  .visitingBtns__visitingBtn a:hover {
+    background: white;
+    color: black; }
 
 .projectListBox {
   position: absolute;
@@ -568,7 +607,6 @@ p {
   flex: 1; }
   @media (min-width: 680px) and (max-width: 1024px) {
     .socialBtns {
-      background: pink;
       order: 3;
       flex-direction: row;
       align-items: center;
@@ -790,19 +828,19 @@ p {
         bottom: 0;
         left: 0;
         opacity: 0;
-        transition: all .2s; }
+        transition: all 0.2s; }
       #projectMenu li a:hover:before {
         height: 101%;
         opacity: 1;
-        transition: all .2s; }
+        transition: all 0.2s; }
       #projectMenu li a:hover p {
         color: black;
-        transition: all .1s;
+        transition: all 0.1s;
         position: relative;
         z-index: 2; }
       #projectMenu li a:hover h5 {
         color: black;
-        transition: all .1s;
+        transition: all 0.1s;
         position: relative;
         z-index: 2; }
     #projectMenu li .sampleText {
@@ -820,14 +858,29 @@ p {
       max-width: 50px; }
     #projectMenu li h5 {
       font-size: 1em;
-      padding-bottom: .3em;
+      padding-bottom: 0.3em;
       color: white; }
     #projectMenu li p {
-      font-size: .5em;
+      font-size: 0.5em;
       color: white; }
       @media (max-width: 480px) {
         #projectMenu li p {
           display: none; } }
+
+.moveSectionDown {
+  cursor: pointer;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  bottom: 6%;
+  animation: arrowScroll 1.5s infinite;
+  z-index: 99999; }
+  @media (min-width: 1024px) {
+    .moveSectionDown {
+      display: none; } }
+  .moveSectionDown .arrow__line:nth-child(2) {
+    display: none; }
 
 .arrow {
   cursor: pointer;
@@ -849,7 +902,7 @@ p {
   border-radius: 5px;
   opacity: 1;
   right: 50%;
-  transition: all .3s; }
+  transition: all 0.3s; }
   .arrow__line:nth-child(1) {
     width: 50%;
     top: 15%;
@@ -952,6 +1005,129 @@ footer {
   100% {
     transform: translate(50%, -53%) rotate(12deg); } }
 
+@keyframes arrowScroll {
+  0% {
+    transform: translate(-50%, 0) rotate(-90deg);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: translate(-50%, 20px) rotate(-90deg);
+    opacity: 0; } }
+
 .animationDiv__box {
   position: fixed;
   z-index: 9999999999; }
+
+.eye {
+  width: 20px;
+  height: 8px;
+  background-color: #f0dcdc;
+  border-radius: 0px 0px 20px 20px;
+  position: relative;
+  left: 10px;
+  top: 40px;
+  box-shadow: 40px 0px 0px 0px #f0dcdc; }
+
+.head {
+  -webkit-backface-visibility: hidden;
+  position: relative;
+  margin: -250px auto;
+  width: 80px;
+  height: 80px;
+  background-color: #111;
+  border-radius: 50px;
+  box-shadow: inset -4px 2px 0px 0px #f0dcdc;
+  -webkit-animation: headAnim 1.5s infinite alternate;
+  -webkit-animation-timing-function: ease-out; }
+
+.body {
+  position: relative;
+  margin: 90px auto;
+  width: 140px;
+  height: 120px;
+  background-color: #111;
+  border-radius: 50px/25px;
+  box-shadow: inset -5px 2px 0px 0px #f0dcdc;
+  -webkit-animation: bodyAnim 1.5s infinite alternate;
+  -webkit-animation-timing-function: ease-out; }
+
+@-webkit-keyframes headAnim {
+  0% {
+    top: 0px; }
+  50% {
+    top: 10px; }
+  100% {
+    top: 0px; } }
+
+@-webkit-keyframes bodyAnim {
+  0% {
+    top: -5px; }
+  50% {
+    top: 10px; }
+  100% {
+    top: -5px; } }
+
+.circ {
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  margin: 60px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 0px 0px 50px 50px;
+  z-index: -1;
+  overflow: hidden;
+  right: 50%;
+  top: 50%; }
+
+.hands {
+  -webkit-backface-visibility: hidden;
+  margin-top: 140px;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  background-color: #111;
+  border-radius: 20px;
+  box-shadow: -1px -4px 0px 0px #f0dcdc;
+  -webkit-transform: rotate(45deg);
+  top: 75%;
+  left: 16%;
+  z-index: 1;
+  -webkit-animation: bodyAnim 1.5s infinite alternate;
+  -webkit-animation-timing-function: ease-out; }
+
+.load {
+  position: absolute;
+  width: 7ch;
+  height: 32px;
+  text-align: left;
+  line-height: 32px;
+  margin: -10px auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #f0dcdc;
+  left: 2%;
+  top: 5%;
+  -webkit-animation: fontAnim 3.75s infinite;
+  -webkit-animation-timing-function: ease-out;
+  word-wrap: break-word;
+  display: block;
+  overflow: hidden; }
+
+@-webkit-keyframes fontAnim {
+  0% {
+    width: 7ch; }
+  16% {
+    width: 8ch; }
+  32% {
+    width: 9ch; }
+  48% {
+    width: 10ch; }
+  64% {
+    width: 11ch; }
+  80% {
+    width: 12ch; }
+  100% {
+    width: 13ch; } }

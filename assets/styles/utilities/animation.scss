@@ -50,3 +50,20 @@
         transform: translate(50%, -53%) rotate(12deg);
     }
 }
+
+// arrow scroll animation
+@keyframes arrowScroll {
+    0% {
+        transform: translate(-50%, 0) rotate(-90deg);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, 20px)rotate(-90deg);
+        opacity: 0;
+    }
+}

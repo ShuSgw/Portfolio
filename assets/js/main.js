@@ -1,6 +1,7 @@
 $(document).ready(function () {
   startAnimation();
-  titleAnimation();
+  // titleAnimation is inside of "onComplete" from startAnimation();
+  // titleAnimation();
   openNav();
   viewPointHeigt();
   $(function () {
@@ -13,23 +14,22 @@ $(document).ready(function () {
             // Restart your animation
             // 内容を消す
             var container = $wrapper.find(".container");
-            TweenMax.to(
-              container,
-              1, {
-                ease: Back.easeOut.config(1.7),
-                y: -100,
-                opacity: 0
-              }
-            );
+            TweenMax.to(container, 1, {
+              ease: Back.easeOut.config(1.7),
+              y: -100,
+              opacity: 0
+            });
             smoothState.restartCSSAnimations();
             if ($(".fp-enabled").length) {
               setTimeout(function () {
                 $(".fullpage").fullpage.destroy("all");
               }, 0.1);
+              $(".fullpage").css({
+                opacity: "0"
+              })
             }
           }
         },
-
         onReady: {
           duration: 1000,
           render: function ($container, $newContent) {
@@ -46,11 +46,11 @@ $(document).ready(function () {
           TweenMax.fromTo(
             newContent,
             1, {
-              y: -100,
+              y: -100
             }, {
               y: 0,
               opacity: 1,
-              ease: Back.easeOut.config(1.7),
+              ease: Back.easeOut.config(1.7)
             }
           );
           console.log($container);
@@ -64,104 +64,15 @@ $(document).ready(function () {
           pcNavShow();
           showLogo();
           showhamburger();
+          showTitles();
+          moveSectionDown();
+          $(".animationDiv__box").remove();
         }
       },
       smoothState = $("#wrapper")
       .smoothState(options)
       .data("smoothState");
   });
-
-  // var tl = new TimelineLite();
-  // var speed = 0.2;
-  // // when each page is loaded
-  // tl.fromTo(
-  //   $(".animationDiv__box:eq(0)"),
-  //   speed, {
-  //     autoAlpha: 0,
-  //     right: "0%",
-  //     top: "0%"
-  //   }, {
-  //     autoAlpha: 1,
-  //     backgroundColor: "black",
-  //     height: "100%",
-  //     width: "25%"
-  //   }
-  // );
-  // tl.fromTo(
-  //   $(".animationDiv__box:eq(1)"),
-  //   speed, {
-  //     autoAlpha: 0,
-  //     right: "25%",
-  //     bottom: "0%"
-  //   }, {
-  //     autoAlpha: 1,
-  //     backgroundColor: "black",
-  //     height: "100%",
-  //     width: "25%"
-  //   }
-  // );
-  // tl.fromTo(
-  //   $(".animationDiv__box:eq(2)"),
-  //   speed, {
-  //     autoAlpha: 0,
-  //     right: "50%"
-  //   }, {
-  //     autoAlpha: 1,
-  //     backgroundColor: "black",
-  //     left: "25%",
-  //     height: "100%",
-  //     width: "25%"
-  //   }
-  // );
-  // tl.fromTo(
-  //   $(".animationDiv__box:eq(3)"),
-  //   speed, {
-  //     autoAlpha: 0,
-  //     left: "0%",
-  //     bottom: "0%"
-  //   }, {
-  //     autoAlpha: 1,
-  //     backgroundColor: "black",
-  //     height: "100%",
-  //     width: "25%"
-  //   }
-  // );
-  // flashing
-  // tl.to($(".animationDiv__box:eq(0)"), 0.1, {
-  //   backgroundColor: "#2D2D2D",
-  //   repeat: -1,
-  //   yoyo: true,
-  //   epeatDelay: 0.1
-  // });
-  // tl.to($(".animationDiv__box:eq(1)"), 0.1, {
-  //   backgroundColor: "#2D2D2D",
-  //   repeat: -1,
-  //   yoyo: true,
-  //   epeatDelay: 0.1
-  // });
-  // tl.to($(".animationDiv__box:eq(2)"), 0.1, {
-  //   backgroundColor: "#2D2D2D",
-  //   repeat: -1,
-  //   yoyo: true,
-  //   epeatDelay: 0.1
-  // });
-  // tl.to($(".animationDiv__box:eq(3)"), 0.1, {
-  //   backgroundColor: "#2D2D2D",
-  //   repeat: -1,
-  //   yoyo: true,
-  //   epeatDelay: 0.1
-  // });
-  // tl.to($(".animationDiv__box"), 1, {
-  //   autoAlpha: 0
-  // });
-  // 文字表示
-  // tl.to($(".contents"), 1, {
-  //   // autoAlpha: 1,
-  //   // 終了と同時にアニメーションdivを消す
-  //   onComplete: function () {
-  //     $(".animationDiv__box").remove();
-  //   }
-  // });
 
   // humbNav with GASP
   function openNav() {
@@ -299,7 +210,7 @@ $(document).ready(function () {
     });
     projectMenuToggle
       .to($(".logo"), 0.1, {
-        display: "none",
+        display: "none"
       })
       .to(projectMenu, 0.1, {
         display: "block",
@@ -307,7 +218,7 @@ $(document).ready(function () {
         left: "0%",
         top: "0%",
         ease: Power4.easeOut,
-        width: "70%",
+        width: "70%"
       })
       .staggerFrom(
         lists,
@@ -331,7 +242,7 @@ $(document).ready(function () {
           ease: Linear.easeNone
         })
         .to($(".logo"), 0.1, {
-          display: "block",
+          display: "block"
         });
     });
     lists.click(function () {
@@ -343,7 +254,7 @@ $(document).ready(function () {
           ease: Linear.easeNone
         })
         .to($(".logo"), 0.1, {
-          display: "block",
+          display: "block"
         });
     });
   }
@@ -381,7 +292,7 @@ $(document).ready(function () {
         top: "0%"
       }, {
         autoAlpha: 1,
-        backgroundColor: "black",
+        backgroundColor: "#212121",
         height: "100%",
         width: "25%"
       }
@@ -394,7 +305,7 @@ $(document).ready(function () {
         bottom: "0%"
       }, {
         autoAlpha: 1,
-        backgroundColor: "black",
+        backgroundColor: "#212121",
         height: "100%",
         width: "25%"
       }
@@ -406,7 +317,7 @@ $(document).ready(function () {
         right: "50%"
       }, {
         autoAlpha: 1,
-        backgroundColor: "black",
+        backgroundColor: "#212121",
         left: "25%",
         height: "100%",
         width: "25%"
@@ -420,56 +331,140 @@ $(document).ready(function () {
         bottom: "0%"
       }, {
         autoAlpha: 1,
-        backgroundColor: "black",
+        backgroundColor: "#212121",
         height: "100%",
         width: "25%"
       }
     );
-    // flashing
-    tl.to($(".animationDiv__box:eq(0)"), 0.1, {
-      backgroundColor: "#2D2D2D",
-      repeat: -1,
-      yoyo: true,
-      epeatDelay: 0.1
+    tl.to($(".animationDiv__box:eq(3)"), .5, {
+      left: "0%",
+      backgroundColor: "#212121"
     });
-    tl.to($(".animationDiv__box:eq(1)"), 0.1, {
-      backgroundColor: "#2D2D2D",
-      repeat: -1,
-      yoyo: true,
-      epeatDelay: 0.1
+    tl.to($(".animationDiv__box:eq(2)"), .5, {
+      left: "3%",
+      backgroundColor: "#282828"
     });
-    tl.to($(".animationDiv__box:eq(2)"), 0.1, {
-      backgroundColor: "#2D2D2D",
-      repeat: -1,
-      yoyo: true,
-      epeatDelay: 0.1
+    tl.to($(".animationDiv__box:eq(1)"), .5, {
+      left: "6%",
+      backgroundColor: "#3f3f3f"
     });
-    tl.to($(".animationDiv__box:eq(3)"), 0.1, {
-      backgroundColor: "#2D2D2D",
-      repeat: -1,
-      yoyo: true,
-      epeatDelay: 0.1
+    tl.to($(".animationDiv__box:eq(0)"), .5, {
+      backgroundColor: "#4f4f4f",
+      left: "9%",
     });
-    tl.to($(".animationDiv__box"), 3, {
-      autoAlpha: 0
+    tl.to($(".animationDiv__box"), .5, {
+      backgroundColor: "black",
+      left: "0%",
     });
-    tl.to($(".container"), .1, {
+    tl.to($(".animationDiv__box"), .5, {
+      width: "0"
+    });
+    // tl.to(".animationDiv__box", 0.5, {
+    //   backgroundColor: "#000000",
+    //   right: "0%",
+    // }, "+=1.5");
+    // tl.to($(".animationDiv__box:eq(0)"), 0.1, {
+    //   backgroundColor: "#2D2D2D",
+    //   repeat: -1,
+    //   yoyo: true,
+    //   epeatDelay: 0.1
+    // });
+    // tl.to($(".animationDiv__box:eq(1)"), 0.1, {
+    //   backgroundColor: "#2D2D2D",
+    //   repeat: -1,
+    //   yoyo: true,
+    //   epeatDelay: 0.1
+    // });
+    // tl.to($(".animationDiv__box:eq(2)"), 0.1, {
+    //   backgroundColor: "#2D2D2D",
+    //   repeat: -1,
+    //   yoyo: true,
+    //   epeatDelay: 0.1
+    // });
+    // tl.to($(".animationDiv__box:eq(3)"), 0.1, {
+    //   backgroundColor: "#2D2D2D",
+    //   repeat: -1,
+    //   yoyo: true,
+    //   epeatDelay: 0.1
+    // });
+    // tl.to($(".animationDiv__box"), 1, {
+    //   autoAlpha: 0
+    // });
+
+    // コンテント表示
+    tl.to($(".container"), 0.1, {
       autoAlpha: 1
     });
-    tl.to($(".logo"), 2, {
-      ease: Bounce.easeOut,
-      top: "5%",
-      autoAlpha: 1
-    }, 2.5);
-    tl.to($(".hamburger"), 1, {
-      top: "5%",
-      right: "4%",
-      autoAlpha: 1
-    }, 1.5);
+    // each text title animation
+    $(".titleBox__title")
+      .contents()
+      .each(function (_, node) {
+        node.parentNode.removeChild(node);
+        switch (node.nodeType) {
+          case Node.TEXT_NODE:
+            var text_split = node.textContent.split("");
+
+            function animate() {
+              text_split.forEach(function (val) {
+                if (val == " ") {
+                  $(".titleBox__title").append("<span>" + "&nbsp;" + "</span>");
+                } else {
+                  $(".titleBox__title").append("<span>" + val + "</span>");
+                }
+              });
+            }
+            animate();
+            break;
+          default:
+            $(".titleBox__title").append(node);
+        }
+      });
+    tl.staggerFrom(
+      $(".titleBox__title span"),
+      1, {
+        ease: Power1.easeOut,
+        opacity: 0,
+        display: "inline-block",
+        y: -500
+      },
+      0.3
+    );
+    tl.from(
+      $(".titleBox__subTitle"),
+      1, {
+        ease: Power1.easeOut,
+        y: 100,
+        onComplete: function () {
+          titleAnimation();
+        }
+      })
+    tl.from(
+      $(".logoBack"),
+      4, {
+        ease: Power1.easeOut,
+        width: "0px",
+        opacity: 1,
+      })
+    tl.to(
+      $(".logo"),
+      1, {
+        ease: Bounce.easeOut,
+        top: "5%",
+        autoAlpha: 1
+      },
+    );
+    tl.to(
+      $(".hamburger"),
+      1, {
+        top: "5%",
+        right: "4%",
+        autoAlpha: 1
+      },
+    );
     if ($(window).width() > 1024) {
       tl.staggerTo(
         navLists,
-        1, {
+        .5, {
           opacity: 1,
           ease: Power4.easeOut,
           // 終了と同時にアニメーションdivを消す
@@ -480,6 +475,25 @@ $(document).ready(function () {
         0.2
       );
     }
+  }
+
+  function showTitles() {
+    TweenMax.staggerTo(
+      $(".titleBox__title span"),
+      0, {
+        ease: Power1.easeOut,
+        opacity: 1,
+        display: "inline-block",
+        y: 0
+      },
+      0
+    );
+    TweenMax.to(
+      $(".titleBox__subTitle"),
+      0, {
+        ease: Power1.easeOut,
+        y: 0
+      })
   }
 
   function pcNavShow() {
@@ -495,24 +509,18 @@ $(document).ready(function () {
   }
 
   function showhamburger() {
-    TweenMax.to(
-      $(".hamburger"),
-      0, {
-        opacity: 1,
-        top: "5%",
-        right: "4%",
-      }
-    );
+    TweenMax.to($(".hamburger"), 0, {
+      opacity: 1,
+      top: "5%",
+      right: "4%"
+    });
   }
 
   function showLogo() {
-    TweenMax.to(
-      $(".logo"),
-      0, {
-        opacity: 1,
-        top: "5%",
-      }
-    );
+    TweenMax.to($(".logo"), 0, {
+      opacity: 1,
+      top: "5%"
+    });
   }
 
   function deleteContents() {}
@@ -523,5 +531,11 @@ $(document).ready(function () {
     var hSize = $(window).height();
     $(".js-viewPointHeigt").height(hSize);
     // }
+  }
+
+  function moveSectionDown() {
+    $(".moveSectionDown").click(function () {
+      $(".fullpage").fullpage.moveSectionDown();
+    });
   }
 });
