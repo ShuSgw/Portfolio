@@ -23,10 +23,10 @@ $(document).ready(function () {
             if ($(".fp-enabled").length) {
               setTimeout(function () {
                 $(".fullpage").fullpage.destroy("all");
-              }, 0.1);
+              }, 1);
               $(".fullpage").css({
                 opacity: "0"
-              })
+              });
             }
           }
         },
@@ -66,6 +66,9 @@ $(document).ready(function () {
           showhamburger();
           showTitles();
           moveSectionDown();
+          if ($(".skillBoxes").length) {
+            barAnimatiaon();
+          }
           $(".animationDiv__box").remove();
         }
       },
@@ -114,12 +117,19 @@ $(document).ready(function () {
         },
         0.1
       );
+
     humBtn.click(function () {
       menuToggle.reversed() ? menuToggle.restart() : menuToggle.reverse();
     });
-    if ($(window).width() < 680) {
+    //モバイルナビのリストをクリックした時にナビを消す
+    if ($(window).width() < 1024) {
       navLists.click(function () {
         menuToggle.reversed() ? menuToggle.restart() : menuToggle.reverse();
+      });
+      $(".container").click(function () {
+        if (!menuToggle.reversed()) {
+          menuToggle.reverse();
+        }
       });
     }
   }
@@ -155,7 +165,8 @@ $(document).ready(function () {
         "project3",
         "project4",
         "project5",
-        "project6"
+        "project6",
+        "project7"
       ],
 
       onLeave: function (index, nextIndex) {
@@ -208,10 +219,12 @@ $(document).ready(function () {
       paused: true,
       reversed: true
     });
-    projectMenuToggle
-      .to($(".logo"), 0.1, {
+    projectMenuBtn.click(function () {
+      $(".logo, .projectMenuBtn").css({
         display: "none"
       })
+    })
+    projectMenuToggle
       .to(projectMenu, 0.1, {
         display: "block",
         position: "fixed",
@@ -230,6 +243,18 @@ $(document).ready(function () {
         0.2
       );
 
+    $(".container").click(function () {
+      tlProjectMenuClose = new TimelineMax({});
+      tlProjectMenuClose
+        .to(projectMenu, 0.1, {
+          display: "none",
+          width: "0%",
+          ease: Linear.easeNone
+        })
+      $(".logo, .projectMenuBtn").css({
+        display: "block"
+      }, )
+    });
     projectMenuBtn.click(function () {
       projectMenuToggle.restart();
     });
@@ -241,9 +266,9 @@ $(document).ready(function () {
           width: "0%",
           ease: Linear.easeNone
         })
-        .to($(".logo"), 0.1, {
-          display: "block"
-        });
+      $(".logo, .projectMenuBtn").css({
+        display: "block"
+      }, )
     });
     lists.click(function () {
       tlProjectMenuClose = new TimelineMax({});
@@ -253,9 +278,9 @@ $(document).ready(function () {
           width: "0%",
           ease: Linear.easeNone
         })
-        .to($(".logo"), 0.1, {
-          display: "block"
-        });
+      $(".logo, .projectMenuBtn").css({
+        display: "block"
+      }, )
     });
   }
 
@@ -282,8 +307,14 @@ $(document).ready(function () {
     var tl = new TimelineLite();
     var speed = 0.2;
     var navLists = $(".nav__box__list");
-
     // when each page is loaded
+    // アニメーション終わる
+    $(".skipAnimationBtn").click(function () {
+      $(this).css({
+        display: "none"
+      })
+      tl.totalProgress(1, false);
+    })
     tl.fromTo(
       $(".animationDiv__box:eq(0)"),
       speed, {
@@ -336,60 +367,34 @@ $(document).ready(function () {
         width: "25%"
       }
     );
-    tl.to($(".animationDiv__box:eq(3)"), .5, {
+    tl.to($(".animationDiv__box:eq(3)"), 0.5, {
       left: "0%",
       backgroundColor: "#212121"
     });
-    tl.to($(".animationDiv__box:eq(2)"), .5, {
+    tl.to($(".animationDiv__box:eq(2)"), 0.5, {
       left: "3%",
       backgroundColor: "#282828"
     });
-    tl.to($(".animationDiv__box:eq(1)"), .5, {
+    tl.to($(".animationDiv__box:eq(1)"), 0.5, {
       left: "6%",
       backgroundColor: "#3f3f3f"
     });
-    tl.to($(".animationDiv__box:eq(0)"), .5, {
+    tl.to($(".animationDiv__box:eq(0)"), 0.5, {
       backgroundColor: "#4f4f4f",
-      left: "9%",
+      left: "9%"
     });
-    tl.to($(".animationDiv__box"), .5, {
+    tl.to($(".animationDiv__box"), 0.5, {
       backgroundColor: "black",
       left: "0%",
+      opacity: 0.8
     });
-    tl.to($(".animationDiv__box"), .5, {
-      width: "0"
+    tl.to($(".animationDiv__box"), 0.5, {
+      width: "100%"
     });
-    // tl.to(".animationDiv__box", 0.5, {
-    //   backgroundColor: "#000000",
-    //   right: "0%",
-    // }, "+=1.5");
-    // tl.to($(".animationDiv__box:eq(0)"), 0.1, {
-    //   backgroundColor: "#2D2D2D",
-    //   repeat: -1,
-    //   yoyo: true,
-    //   epeatDelay: 0.1
-    // });
-    // tl.to($(".animationDiv__box:eq(1)"), 0.1, {
-    //   backgroundColor: "#2D2D2D",
-    //   repeat: -1,
-    //   yoyo: true,
-    //   epeatDelay: 0.1
-    // });
-    // tl.to($(".animationDiv__box:eq(2)"), 0.1, {
-    //   backgroundColor: "#2D2D2D",
-    //   repeat: -1,
-    //   yoyo: true,
-    //   epeatDelay: 0.1
-    // });
-    // tl.to($(".animationDiv__box:eq(3)"), 0.1, {
-    //   backgroundColor: "#2D2D2D",
-    //   repeat: -1,
-    //   yoyo: true,
-    //   epeatDelay: 0.1
-    // });
-    // tl.to($(".animationDiv__box"), 1, {
-    //   autoAlpha: 0
-    // });
+    tl.to($(".animationDiv__box"), 1, {
+      width: "0%",
+      left: "100%"
+    });
 
     // コンテント表示
     tl.to($(".container"), 0.1, {
@@ -429,47 +434,37 @@ $(document).ready(function () {
       },
       0.3
     );
-    tl.from(
-      $(".titleBox__subTitle"),
-      1, {
-        ease: Power1.easeOut,
-        y: 100,
-        onComplete: function () {
-          titleAnimation();
-        }
-      })
-    tl.from(
-      $(".logoBack"),
-      4, {
-        ease: Power1.easeOut,
-        width: "0px",
-        opacity: 1,
-      })
-    tl.to(
-      $(".logo"),
-      1, {
-        ease: Bounce.easeOut,
-        top: "5%",
-        autoAlpha: 1
-      },
-    );
-    tl.to(
-      $(".hamburger"),
-      1, {
-        top: "5%",
-        right: "4%",
-        autoAlpha: 1
-      },
-    );
+    tl.from($(".titleBox__subTitle"), 1, {
+      ease: Power1.easeOut,
+      y: 100,
+      onComplete: function () {
+        titleAnimation();
+      }
+    });
+    tl.from($(".logoBack"), 4, {
+      ease: Power1.easeOut,
+      width: "0px",
+      opacity: 1
+    });
+    tl.to($(".logo"), 1, {
+      ease: Bounce.easeOut,
+      top: "5%",
+      autoAlpha: 1
+    });
+    tl.to($(".hamburger"), 1, {
+      top: "5%",
+      right: "4%",
+      autoAlpha: 1
+    });
     if ($(window).width() > 1024) {
       tl.staggerTo(
         navLists,
-        .5, {
+        0.5, {
           opacity: 1,
           ease: Power4.easeOut,
           // 終了と同時にアニメーションdivを消す
           onComplete: function () {
-            $(".animationDiv__box").remove();
+            $(".animationDiv").remove();
           }
         },
         0.2
@@ -488,12 +483,10 @@ $(document).ready(function () {
       },
       0
     );
-    TweenMax.to(
-      $(".titleBox__subTitle"),
-      0, {
-        ease: Power1.easeOut,
-        y: 0
-      })
+    TweenMax.to($(".titleBox__subTitle"), 0, {
+      ease: Power1.easeOut,
+      y: 0
+    });
   }
 
   function pcNavShow() {
@@ -523,7 +516,6 @@ $(document).ready(function () {
     });
   }
 
-  function deleteContents() {}
 
   function viewPointHeigt() {
     // stop breaking design due to mobile addressBar
@@ -536,6 +528,41 @@ $(document).ready(function () {
   function moveSectionDown() {
     $(".moveSectionDown").click(function () {
       $(".fullpage").fullpage.moveSectionDown();
+    });
+  }
+
+  function barAnimatiaon() {
+    $(".skillBoxes__box__bar__chart").width(0);
+    if ($(window).width() > 1024) {
+      $(".skillBoxes__box__bar__chart").css("width", "100%");
+    }
+    $(window).scroll(function () {
+      var st = $(window).scrollTop();
+      var scrollBottom =
+        $(document).height() - $(window).height() - $(window).scrollTop();
+      var dev = $("#toggleDev").offset().top;
+
+      if (scrollBottom < dev) {
+        console.log("dev");
+        $("#toggleDev")
+          .siblings()
+          .find(".skillBoxes__box__bar__chart")
+          .css("width", "100%");
+      }
+      if (scrollBottom < 300) {
+        console.log("desi");
+        $("#toggleDesign")
+          .siblings()
+          .find(".skillBoxes__box__bar__chart")
+          .css("width", "100%");
+      }
+      if (scrollBottom < 100) {
+        console.log("other");
+        $("#toggleOthers")
+          .siblings()
+          .find(".skillBoxes__box__bar__chart")
+          .css("width", "100%");
+      }
     });
   }
 });

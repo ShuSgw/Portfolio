@@ -56,24 +56,25 @@
     background: white;
     border-radius: 20px;
     height: 100%;
+    transition: 5s;
 }
 
 .skillBoxes__box__bar__chart__100 {
-    width: 100%;
+    max-width: 100%;
 }
 
 .skillBoxes__box__bar__chart__80 {
-    width: 80%;
+    max-width: 80%;
 }
 
 .skillBoxes__box__bar__chart__60 {
-    width: 60%;
+    max-width: 60%;
 }
 
 .skillBoxes__box__bar__chart__40 {
-    width: 40%;
+    max-width: 40%;
 }
 
 .skillBoxes__box__bar__chart__20 {
-    width: 20%;
+    max-width: 20%;
 }

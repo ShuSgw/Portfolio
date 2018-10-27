@@ -21,6 +21,7 @@
     height: 100%;
 }
 
+
 .contentBox {
     position: relative;
     padding-top: 29%;
@@ -102,9 +103,22 @@
 .contentBox__textBox__title {
     font-size: 2.4em;
     padding-bottom: 0.7em;
+    position: relative;
 
     @include pc {
         font-size: 4em;
+    }
+}
+
+.contentBox__textBox__title__closeBtn {
+    position: absolute;
+    color: white;
+    right: 0%;
+    top: 0%;
+    font-size: 1em;
+
+    @include pc {
+        font-size: .5em;
     }
 }
 
@@ -170,15 +184,18 @@
         display: inline-block;
         padding: 0.7em 1.7em;
         text-decoration: none;
-        background: black;
-        color: #FFF;
+        background: white;
+        color: black;
         border-radius: 5px;
         margin: 0 .5em;
         transition: .7s;
+        border: 2px solid black;
 
         &:hover {
-            background: white;
-            color: black;
+            background: black;
+            color: white;
+            border: 2px solid white;
+
         }
 
     }

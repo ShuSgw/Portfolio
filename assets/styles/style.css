@@ -272,6 +272,15 @@ p {
 .link-active {
   background-color: white; }
 
+.skipAnimationBtn {
+  color: white;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  font-size: 1em;
+  z-index: 999999999999999999999; }
+
 .titleBox {
   position: absolute;
   width: 90%;
@@ -378,10 +387,21 @@ p {
 
 .contentBox__textBox__title {
   font-size: 2.4em;
-  padding-bottom: 0.7em; }
+  padding-bottom: 0.7em;
+  position: relative; }
   @media (min-width: 1024px) {
     .contentBox__textBox__title {
       font-size: 4em; } }
+
+.contentBox__textBox__title__closeBtn {
+  position: absolute;
+  color: white;
+  right: 0%;
+  top: 0%;
+  font-size: 1em; }
+  @media (min-width: 1024px) {
+    .contentBox__textBox__title__closeBtn {
+      font-size: .5em; } }
 
 .email {
   display: inline-block;
@@ -427,14 +447,16 @@ p {
   display: inline-block;
   padding: 0.7em 1.7em;
   text-decoration: none;
-  background: black;
-  color: #FFF;
+  background: white;
+  color: black;
   border-radius: 5px;
   margin: 0 .5em;
-  transition: .7s; }
+  transition: .7s;
+  border: 2px solid black; }
   .visitingBtns__visitingBtn a:hover {
-    background: white;
-    color: black; }
+    background: black;
+    color: white;
+    border: 2px solid white; }
 
 .projectListBox {
   position: absolute;
@@ -582,22 +604,23 @@ p {
   position: absolute;
   background: white;
   border-radius: 20px;
-  height: 100%; }
+  height: 100%;
+  transition: 5s; }
 
 .skillBoxes__box__bar__chart__100 {
-  width: 100%; }
+  max-width: 100%; }
 
 .skillBoxes__box__bar__chart__80 {
-  width: 80%; }
+  max-width: 80%; }
 
 .skillBoxes__box__bar__chart__60 {
-  width: 60%; }
+  max-width: 60%; }
 
 .skillBoxes__box__bar__chart__40 {
-  width: 40%; }
+  max-width: 40%; }
 
 .skillBoxes__box__bar__chart__20 {
-  width: 20%; }
+  max-width: 20%; }
 
 .socialBtns {
   display: flex;
@@ -784,7 +807,7 @@ p {
   display: none;
   z-index: 999;
   padding-top: 1.1em;
-  z-index: 999999; }
+  z-index: 99999999999999; }
   @media (min-width: 1024px) {
     #projectMenu {
       max-width: 500px; } }
@@ -919,7 +942,7 @@ p {
     transform: rotate(40deg); }
 
 .tags {
-  padding-top: .8em; }
+  padding: .8em 0; }
 
 .tags__item {
   display: inline-block;
@@ -1017,7 +1040,7 @@ footer {
 
 .animationDiv__box {
   position: fixed;
-  z-index: 9999999999; }
+  z-index: 9999; }
 
 .eye {
   width: 20px;

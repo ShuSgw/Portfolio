@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./assets/styles/pulg-in/fullpage.min.css?2018-09-01">
-    <link rel="stylesheet" href="assets/styles/style.css?2018-09-01">
-    <title>Shuhei Shagawa - Projects</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/styles/pulg-in/fullpage.min.css?2018-10-21">
+    <link rel="stylesheet" href="assets/styles/style.css?2018-10-21">
+    <link rel="icon" type="image/x-icon" href="assets/img/fa.png">
+    <title>Shuhei Shagawa - About</title>
 </head>
 
 <body>
@@ -70,18 +73,22 @@
             <span class="hamburger__line"></span>
             <span class="hamburger__line"></span>
         </div>
-        <div class="container contents js-viewPointHeigt">
-            <div class="projectMenuBtn">
-                <span class="projectMenuBtn__text">Project List</span>
-                <div class="projectMenuBtn__svgBox">
-                    <svg version="1.1" id="projListIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px" y="0px" viewBox="0 0 137.3 137.3" style="enable-background:new 0 0 137.3 137.3;"
-                        xml:space="preserve">
-                        <path class="st0" d="M68.6,5.6c-34.8,0-63,28.2-63,63s28.2,63,63,63s63-28.2,63-63" />
-                    </svg>
-                </div>
+        <div class="projectMenuBtn">
+            <span class="projectMenuBtn__text">Project List</span>
+            <div class="projectMenuBtn__svgBox">
+                <svg version="1.1" id="projListIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 137.3 137.3" style="enable-background:new 0 0 137.3 137.3;" xml:space="preserve">
+                    <path class="st0" d="M68.6,5.6c-34.8,0-63,28.2-63,63s28.2,63,63,63s63-28.2,63-63" />
+                </svg>
             </div>
-
+        </div>
+        <div class="container contents js-viewPointHeigt">
+            <div class="zero">0</div>
+            <div class="moveSectionDown">
+                <span class="arrow__line"></span>
+                <span class="arrow__line"></span>
+                <span class="arrow__line"></span>
+            </div>
             <ul id="projectMenu">
                 <li data-menuanchor="project1" class="active projectMenu__li">
                     <a href="#project1">
@@ -137,7 +144,7 @@
                         </div>
                     </a>
                 </li>
-                <li data-menuanchor="project1" class="active projectMenu__li">
+                <li data-menuanchor="project7" class="active projectMenu__li">
                     <a href="#project7">
                         <img class="sampleImg" src="assets/img/react_app.png" alt="">
                         <div class="sampleText">
@@ -152,12 +159,7 @@
                     <span class="arrow__line"></span>
                 </div>
             </ul>
-            <div class="zero">0</div>
-            <div class="moveSectionDown">
-                <span class="arrow__line"></span>
-                <span class="arrow__line"></span>
-                <span class="arrow__line"></span>
-            </div>
+
             <div class="contents fullpage">
                 <section class="section projects">
                     <div class="main main--project">
@@ -251,21 +253,27 @@
                 </section>
                 <section class="section projects">
                     <div class="main main--project">
-                        <a href="project_7.html">
+                        <a href="#">
                             <div class="projectListBox">
                                 <div class="projectListBox__image">
                                     <img src="./assets/img/thum_react_app.png" alt="">
                                 </div>
                                 <div class="projectListBox__title">
                                     <div class="projectListBox__title__num projectListBox__title__num--changed">7</div>
-                                    <h3 class="projectListBox__title__name">React To Do App</h3>
+                                    <h3 class="projectListBox__title__name">React To Do App (Comming soon)</h3>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </section>
             </div>
+
+            <footer class="stickBtm">
+                Copyright &#169 Shuhei Shagawa 2018
+            </footer>
         </div>
+    </div>
+    </div>
 </body>
 <script src="assets/js/jq_min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
@@ -274,7 +282,117 @@
 <script>
     $(function () {
         if (!$('.logoBack').length) {
-            location.href = 'index.html';
+            console.log("hello");
+            var script = document.createElement('script');
+            script.src = "assets/js/main.js";
+            $("html").append(script);
+            $(".container, .nav__box__list, .logo").css({
+                opacity: 1
+            })
+            $(".logo").css({
+                top: "5%"
+            })
+            $(".hamburger").css({
+                top: "5%",
+                right: "4%",
+                opacity: 1
+            })
+            $(".nav__box__list").css({
+                opacity: 0
+            })
+            $(".moveSectionDown").click(function () {
+                $(".fullpage").fullpage.moveSectionDown();
+            });
+            var image = $(".projectListBox__image").children("img");
+            image.css({
+                opacity: 1
+            })
+            $(".fullpage").fullpage({
+                scrollingSpeed: 400,
+                menu: "#projectMenu",
+                anchors: [
+                    "project1",
+                    "project2",
+                    "project3",
+                    "project4",
+                    "project5",
+                    "project6"
+                ],
+            });
+            var projectMenu = $("#projectMenu");
+            var projectMenuBtn = $(".projectMenuBtn");
+            var arrow = $(".arrow");
+            var lists = $(".projectMenu__li");
+            var projectMenuToggle = new TimelineMax({
+                paused: true,
+                reversed: true
+            });
+            projectMenuBtn.click(function () {
+                $(".logo, .projectMenuBtn").css({
+                    display: "none"
+                }, )
+            })
+            projectMenuToggle
+                .to(projectMenu, 0.1, {
+                    display: "block",
+                    position: "fixed",
+                    left: "0%",
+                    top: "0%",
+                    ease: Power4.easeOut,
+                    width: "70%"
+                })
+                .staggerFrom(
+                    lists,
+                    1, {
+                        y: 10,
+                        opacity: 0,
+                        ease: Power4.easeOut
+                    },
+                    0.2
+                );
+            if ($(window).width() < 1024) {
+                $(".container").click(function () {
+                    tlProjectMenuClose = new TimelineMax({});
+                    tlProjectMenuClose.to(projectMenu, 0.1, {
+                        display: "none",
+                        width: "0%",
+                        ease: Linear.easeNone
+                    }).to($(".logo"),
+                        0.1, {
+                            display: "block"
+                        });
+                });
+            }
+            projectMenuBtn.click(function () {
+                projectMenuToggle.restart();
+            });
+            arrow.click(function () {
+                tlProjectMenuClose = new TimelineMax({});
+                tlProjectMenuClose
+                    .to(projectMenu, 0.1, {
+                        display: "none",
+                        width: "0%",
+                        ease: Linear.easeNone
+                    })
+                $($(".logo, .projectMenuBtn")).css({
+                    display: "block"
+                })
+            });
+            lists.click(function () {
+                tlProjectMenuClose = new TimelineMax({});
+                tlProjectMenuClose
+                    .to(projectMenu, 0.1, {
+                        display: "none",
+                        width: "0%",
+                        ease: Linear.easeNone
+                    })
+                $(".logo").css({
+                    display: "block"
+                })
+            });
+            $("body").prepend('<div id="d1"><div id="d2"><div id="d3"></div></div></div>');
+            $("body").prepend('<div class="logoBack"></div>');
+            $("body").append('<link rel="stylesheet" href="./assets/styles/pulg-in/dark.css">');
         }
     });
 </script>

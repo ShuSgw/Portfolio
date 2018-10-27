@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="./assets/styles/pulg-in/fullpage.min.css?2018-09-01">
-    <link rel="stylesheet" href="assets/styles/style.css?2018-09-01">
+    <link rel="stylesheet" href="./assets/styles/pulg-in/fullpage.min.css?2018-10-21">
+    <link rel="stylesheet" href="assets/styles/style.css?2018-10-21">
+    <link rel="icon" type="image/x-icon" href="assets/img/fa.png">
     <title>Shuhei Shagawa - About</title>
 </head>
 
 <body>
-
     <div id="wrapper">
         <div class="logo">
             <a href="index.html">
@@ -98,7 +98,7 @@
                 <div class="skillBoxes">
                     <h3 class="skillBoxs__title">Skills</h3>
                     <div class="skillBoxes__box">
-                        <h4>Development</h4>
+                        <h4 id="toggleDev">Development</h4>
                         <h5 class="skillBoxes__box__skillName">HTML5</h5>
                         <div class="skillBoxes__box__bar">
                             <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__100"></div>
@@ -117,7 +117,7 @@
                         </div>
                     </div>
                     <div class="skillBoxes__box">
-                        <h4>Design</h4>
+                        <h4 id="toggleDesign">Design</h4>
                         <h5 class="skillBoxes__box__skillName">Illustrator</h5>
                         <div class="skillBoxes__box__bar">
                             <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__60"></div>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                     <div class="skillBoxes__box">
-                        <h4>Others</h4>
+                        <h4 id="toggleOthers">Others</h4>
                         <h5 class="skillBoxes__box__skillName">Cooking</h5>
                         <div class="skillBoxes__box__bar">
                             <div class="skillBoxes__box__bar__chart skillBoxes__box__bar__chart__80"></div>
@@ -158,11 +158,23 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
 <script src="assets/js/jquery.smoothState.min.js"></script>
-<!-- <script src="./assets/js/footer.js"></script> -->
 <script>
     $(function () {
         if (!$('.logoBack').length) {
-            location.href = 'index.html';
+            console.log("hello");
+            var script = document.createElement('script');
+            script.src = "assets/js/main.js";
+            $("html").append(script);
+            $(".container, .nav__box__list, .logo").css({
+                opacity: 1
+            })
+            $(".logo").css({
+                top: "5%"
+            })
+
+            $("body").prepend('<div id="d1"><div id="d2"><div id="d3"></div></div></div>');
+            $("body").prepend('<div class="logoBack"></div>');
+            $("body").append('<link rel="stylesheet" href="./assets/styles/pulg-in/dark.css">');
         }
     });
 </script>
