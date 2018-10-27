@@ -161,7 +161,6 @@
 <script>
     $(function () {
         if (!$('.logoBack').length) {
-            console.log("hello");
             var script = document.createElement('script');
             script.src = "assets/js/main.js";
             $("html").append(script);
@@ -171,7 +170,42 @@
             $(".logo").css({
                 top: "5%"
             })
+            $(".hamburger").css({
+                top: "5%",
+                right: "4%",
+                opacity: 1
+            })
+            $(".nav__box__list").css({
+                opacity: 0
+            })
+            if ($(window).width() > 1024) {
+                $(".nav__box__list").css({
+                    opacity: 1
+                })
+            }
+            $(".skillBoxes__box__bar__chart").width(0);
+            if ($(window).width() > 1024) {
+                $(".skillBoxes__box__bar__chart").css("width", "100%");
+            }
+            $(window).scroll(function () {
+                var st = $(window).scrollTop();
+                var scrollBottom =
+                    $(document).height() - $(window).height() - $(window).scrollTop();
+                var dev = $("#toggleDev").offset().top;
 
+                if (scrollBottom < dev) {
+                    $("#toggleDev").siblings().find(".skillBoxes__box__bar__chart")
+                        .css("width", "100%");
+                }
+                if (scrollBottom < 300) {
+                    $("#toggleDesign").siblings()
+                        .find(".skillBoxes__box__bar__chart").css("width", "100%");
+                }
+                if (scrollBottom < 100) {
+                    $("#toggleOthers").siblings().find(".skillBoxes__box__bar__chart").css("width",
+                        "100%");
+                }
+            });
             $("body").prepend('<div id="d1"><div id="d2"><div id="d3"></div></div></div>');
             $("body").prepend('<div class="logoBack"></div>');
             $("body").append('<link rel="stylesheet" href="./assets/styles/pulg-in/dark.css">');

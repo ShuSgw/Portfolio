@@ -53,7 +53,6 @@ $(document).ready(function () {
               ease: Back.easeOut.config(1.7)
             }
           );
-          console.log($container);
           openNav();
           titleAnimation();
           if ($(".fullpage").length) {
@@ -444,7 +443,7 @@ $(document).ready(function () {
     tl.from($(".logoBack"), 4, {
       ease: Power1.easeOut,
       width: "0px",
-      opacity: 1
+      opacity: 1,
     });
     tl.to($(".logo"), 1, {
       ease: Bounce.easeOut,
@@ -543,21 +542,18 @@ $(document).ready(function () {
       var dev = $("#toggleDev").offset().top;
 
       if (scrollBottom < dev) {
-        console.log("dev");
         $("#toggleDev")
           .siblings()
           .find(".skillBoxes__box__bar__chart")
           .css("width", "100%");
       }
       if (scrollBottom < 300) {
-        console.log("desi");
         $("#toggleDesign")
           .siblings()
           .find(".skillBoxes__box__bar__chart")
           .css("width", "100%");
       }
       if (scrollBottom < 100) {
-        console.log("other");
         $("#toggleOthers")
           .siblings()
           .find(".skillBoxes__box__bar__chart")

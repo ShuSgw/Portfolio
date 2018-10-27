@@ -151,7 +151,28 @@
 <script>
     $(function () {
         if (!$('.logoBack').length) {
-            console.log("hello");
+            var script = document.createElement('script');
+            script.src = "assets/js/main.js";
+            $("html").append(script);
+            $(".container, .nav__box__list, .logo").css({
+                opacity: 1
+            })
+            $(".logo").css({
+                top: "5%"
+            })
+            $(".hamburger").css({
+                top: "5%",
+                right: "4%",
+                opacity: 1
+            })
+            $(".nav__box__list").css({
+                opacity: 0
+            })
+            if ($(window).width() > 1024) {
+                $(".nav__box__list").css({
+                    opacity: 1
+                })
+            }
             var script = document.createElement('script');
             script.src = "assets/js/main.js";
             $("html").append(script);

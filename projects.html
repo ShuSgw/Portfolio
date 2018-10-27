@@ -282,7 +282,6 @@
 <script>
     $(function () {
         if (!$('.logoBack').length) {
-            console.log("hello");
             var script = document.createElement('script');
             script.src = "assets/js/main.js";
             $("html").append(script);
@@ -300,6 +299,11 @@
             $(".nav__box__list").css({
                 opacity: 0
             })
+            if ($(window).width() > 1024) {
+                $(".nav__box__list").css({
+                    opacity: 1
+                })
+            }
             $(".moveSectionDown").click(function () {
                 $(".fullpage").fullpage.moveSectionDown();
             });

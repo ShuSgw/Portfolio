@@ -142,7 +142,6 @@
 <script>
     $(function () {
         if (!$('.logoBack').length) {
-            console.log("hello");
             var script = document.createElement('script');
             script.src = "assets/js/main.js";
             $("html").append(script);
@@ -152,6 +151,32 @@
             $(".logo").css({
                 top: "5%"
             })
+            $(".hamburger").css({
+                top: "5%",
+                right: "4%",
+                opacity: 1
+            })
+            $(".nav__box__list").css({
+                opacity: 0
+            })
+            if ($(window).width() > 1024) {
+                $(".nav__box__list").css({
+                    opacity: 1
+                })
+            }
+            letterAnimeTl = new TimelineLite();
+            letterAnimeTl.to("#textline", 5, {
+                y: "300px"
+            });
+            letterAnimeTl.to("#textline", 1, {
+                opacity: 0
+            });
+            letterAnimeTl.to("#cover", 0.1, {
+                opacity: 0
+            });
+            letterAnimeTl.to("#lineTop", 0.1, {
+                opacity: 1
+            });
             $("body").prepend('<div id="d1"><div id="d2"><div id="d3"></div></div></div>');
             $("body").prepend('<div class="logoBack"></div>');
             $("body").append('<link rel="stylesheet" href="./assets/styles/pulg-in/dark.css">');
