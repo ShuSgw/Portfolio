@@ -156,7 +156,7 @@ $(document).ready(function () {
 
     tlProject = new TimelineMax({});
     $(".fullpage").fullpage({
-      scrollingSpeed: 400,
+      // scrollingSpeed: 400,
       menu: "#projectMenu",
       anchors: [
         "project1",
@@ -241,7 +241,7 @@ $(document).ready(function () {
         },
         0.2
       );
-
+    // whereever page is clicked, prokectMenu is closed
     $(".container").click(function () {
       tlProjectMenuClose = new TimelineMax({});
       tlProjectMenuClose
@@ -250,13 +250,16 @@ $(document).ready(function () {
           width: "0%",
           ease: Linear.easeNone
         })
+      // to show logo and menubtn
       $(".logo, .projectMenuBtn").css({
         display: "block"
       }, )
     });
+    // when the projectMenu is clicked, open projectNav
     projectMenuBtn.click(function () {
       projectMenuToggle.restart();
     });
+    // when arrow inside of prokectMenu is clicked, close projectNav
     arrow.click(function () {
       tlProjectMenuClose = new TimelineMax({});
       tlProjectMenuClose
@@ -265,6 +268,7 @@ $(document).ready(function () {
           width: "0%",
           ease: Linear.easeNone
         })
+      // opan logo and projectMenuBtn
       $(".logo, .projectMenuBtn").css({
         display: "block"
       }, )
@@ -279,7 +283,7 @@ $(document).ready(function () {
         })
       $(".logo, .projectMenuBtn").css({
         display: "block"
-      }, )
+      })
     });
   }
 
@@ -453,7 +457,11 @@ $(document).ready(function () {
     tl.to($(".hamburger"), 1, {
       top: "5%",
       right: "4%",
-      autoAlpha: 1
+      autoAlpha: 1,
+      onComplete: function () {
+        $(".skipAnimationBtn").remove();
+        $(".animationDiv").remove();
+      }
     });
     if ($(window).width() > 1024) {
       tl.staggerTo(
@@ -461,10 +469,6 @@ $(document).ready(function () {
         0.5, {
           opacity: 1,
           ease: Power4.easeOut,
-          // 終了と同時にアニメーションdivを消す
-          onComplete: function () {
-            $(".animationDiv").remove();
-          }
         },
         0.2
       );

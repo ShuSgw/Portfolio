@@ -5,8 +5,7 @@
     height: 100%;
     display: none;
     z-index: 999;
-    font-family: 'Playfair Display',
-        serif;
+    font-family: $subFont;
 
     @include tab {
         max-width: 250px;
