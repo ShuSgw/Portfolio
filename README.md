@@ -28,7 +28,9 @@ see http://shuhei-shagawa.com for more details.
 ### 3. Development
 
 **Coding** - My text editer is VsCode
+
 **Why GSAP** - GSAP is up to 20x faster than jQuery and CSS. Also, there are not much issue cased by cross-browser compatibility.
+
 **Why smoothState.js** - The plugin simply enable to a website to become a single page application with Ajax, so that the website can achieve a beautiful page transition animation with CSS and GSAP.
 
 ## Code architecture for CSS
