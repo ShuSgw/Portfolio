@@ -18,6 +18,7 @@ see http://shuhei-shagawa.com for more details.
 ### 1. Planning
 
 **Setting a Goal** - The purpose of building up this website is to showcase my projects, tell visitors who I am, and attract them to stay the website longer.
+
 **Color** - The concept of the webiste is the universe that stands for infinity. Thus, I used dark colors to express the universe and white color to make contrast.
 
 ### 2. Design
