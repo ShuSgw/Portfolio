@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Anton");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
 @import url("https://fonts.googleapis.com/css?family=Anton");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Roboto:900");
 html,
 body,
 div,
@@ -394,6 +398,16 @@ p {
     .contentBox__textBox__title {
       font-size: 4em; } }
 
+.contentBox__textBox__text {
+  font-family: "Roboto", sans-serif; }
+  @media (min-width: 1024px) {
+    .contentBox__textBox__text {
+      width: 100%; } }
+
+@media (min-width: 1024px) {
+  .contentBox__textBox__text--contact {
+    width: 78%; } }
+
 .contentBox__textBox__title__closeBtn {
   position: absolute;
   color: white;
@@ -407,7 +421,7 @@ p {
 .email {
   display: inline-block;
   font-size: 1.5em;
-  margin: 0.3em 0;
+  margin: .6em 0;
   position: relative; }
   .email:after {
     position: absolute;
@@ -419,6 +433,12 @@ p {
   .email:hover::after {
     width: 100%;
     height: 2px; }
+  @media (min-width: 680px) and (max-width: 1024px) {
+    .email {
+      font-size: 2em; } }
+  @media (min-width: 1024px) {
+    .email {
+      font-size: 2.6em; } }
 
 .contentBox__details {
   width: 100%;
@@ -564,10 +584,16 @@ p {
   flex-direction: column;
   margin-top: 2em;
   color: white; }
+  @media (min-width: 680px) and (max-width: 1024px) {
+    .skillBoxes {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between; } }
   @media (min-width: 1024px) {
     .skillBoxes {
       flex-direction: row;
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      justify-content: space-between; } }
 
 .skillBoxs__title {
   font-size: 2em;
@@ -579,32 +605,42 @@ p {
   height: 100%;
   padding: 1em 0;
   display: flex;
-  flex-flow: column; }
+  flex-flow: column;
+  font-family: "Roboto", sans-serif; }
+  @media (min-width: 680px) and (max-width: 1024px) {
+    .skillBoxes__box {
+      width: 47%; } }
   @media (min-width: 1024px) {
     .skillBoxes__box {
-      padding: 1.66%;
-      width: 30%; } }
+      margin: 1.66% 0;
+      width: 21.68%; } }
+  .skillBoxes__box h4 {
+    font-weight: bold; }
 
 .skillBoxes__box__skillName {
   width: 95%;
   margin: 0 auto;
   margin-top: 1em; }
 
+.skillBoxes__lists {
+  margin-top: 1em; }
+
+.skillBoxes__lists__item {
+  padding: .5em 0; }
+
 .skillBoxes__box__bar {
   width: 94%;
-  height: 13px;
+  height: 8px;
   margin: 0 auto;
   position: relative;
-  border-radius: 20px;
   border-style: solid;
-  border-width: 3px;
+  border-width: 2.5px;
   border-color: white;
   margin-top: .8em; }
 
 .skillBoxes__box__bar__chart {
   position: absolute;
   background: white;
-  border-radius: 20px;
   height: 100%;
   transition: 5s; }
 

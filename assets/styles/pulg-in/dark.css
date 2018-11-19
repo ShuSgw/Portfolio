@@ -72,7 +72,7 @@ body {
     -o-animation: 12s warp linear infinite;
     animation: 12s warp linear infinite;
     visibility: visible;
-    background-position: 50% 50%
+    background-position: 50% 50%;
 }
 
 #d1:before {

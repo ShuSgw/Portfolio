@@ -5,6 +5,9 @@
 // $color-key: #8D742A;
 @import url('https://fonts.googleapis.com/css?family=Anton');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:900');
+
 
 $color-main: #2D2D2D;
 $color-text: #fff;
@@ -13,13 +16,14 @@ $baseFont: 'Anton',
 sans-serif;
 $subFont:'Playfair Display',
 serif;
-
+$textFont: 'Roboto',
+sans-serif;
 
 $contentMax: 1024px;
 
-$pc: 1024px; // PC
-$tab: 680px; // タブレット
-$sp: 480px; // スマホ
+$pc: 1024px; // pc
+$tab: 680px; // tablet
+$sp: 480px; // smartphone
 
 // min-width: 768px
 @mixin pc {

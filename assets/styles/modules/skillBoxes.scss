@@ -6,9 +6,16 @@
     margin-top: 2em;
     color: white;
 
+    @include tab {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
     @include pc {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
@@ -24,12 +31,23 @@
     padding: 1em 0;
     display: flex;
     flex-flow: column;
+    font-family: $textFont;
+
+
+    @include tab {
+        width: 47%;
+    }
 
     @include pc {
-        padding: 1.66%;
-        width: 30%;
+        margin: 1.66% 0;
+        width: 21.68%;
+    }
+
+    h4 {
+        font-weight: bold;
     }
 }
+
 
 .skillBoxes__box__skillName {
     width: 95%;
@@ -37,15 +55,28 @@
     margin-top: 1em;
 }
 
+.skillBoxes__lists {
+    margin-top: 1em;
+}
+
+.skillBoxes__lists__item {
+    padding: .5em 0;
+
+    // &:first-of-type {
+    //     padding: 0;
+    // }
+}
+
+
 .skillBoxes__box__bar {
     width: 94%;
-    height: 13px;
+    height: 8px;
     margin: 0 auto;
     position: relative;
-    border-radius: 20px;
+
     // background: black;
     border-style: solid;
-    border-width: 3px;
+    border-width: 2.5px;
     border-color: white;
     margin-top: .8em;
 }
@@ -54,7 +85,7 @@
 .skillBoxes__box__bar__chart {
     position: absolute;
     background: white;
-    border-radius: 20px;
+
     height: 100%;
     transition: 5s;
 }

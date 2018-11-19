@@ -75,9 +75,9 @@
 
 .contentBox__textBox {
     padding: 2em 0;
+
     // background: red;
 
-    @include tab {}
 
     @include pc {
         width: 100%;
@@ -110,6 +110,21 @@
     }
 }
 
+.contentBox__textBox__text {
+    font-family: $textFont;
+
+    @include pc {
+        width: 100%;
+    }
+}
+
+// modifier
+.contentBox__textBox__text--contact {
+    @include pc {
+        width: 78%;
+    }
+}
+
 .contentBox__textBox__title__closeBtn {
     position: absolute;
     color: white;
@@ -125,7 +140,7 @@
 .email {
     display: inline-block;
     font-size: 1.5em;
-    margin: 0.3em 0;
+    margin: .6em 0;
     position: relative;
 
     // background: red;
@@ -142,6 +157,14 @@
     &:hover::after {
         width: 100%;
         height: 2px;
+    }
+
+    @include tab {
+        font-size: 2em;
+    }
+
+    @include pc {
+        font-size: 2.6em;
     }
 }
 

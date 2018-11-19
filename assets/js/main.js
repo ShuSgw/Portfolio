@@ -1,16 +1,16 @@
-$(document).ready(function () {
+$(document).ready(function() {
   startAnimation();
   // titleAnimation is inside of "onComplete" from startAnimation();
   // titleAnimation();
   openNav();
   viewPointHeigt();
-  $(function () {
+  $(function() {
     var options = {
         prefetch: true,
         cacheLength: 5,
         onStart: {
           duration: 1000, // Duration of our animation
-          render: function ($wrapper) {
+          render: function($wrapper) {
             // Restart your animation
             // 内容を消す
             var container = $wrapper.find(".container");
@@ -21,7 +21,7 @@ $(document).ready(function () {
             });
             smoothState.restartCSSAnimations();
             if ($(".fp-enabled").length) {
-              setTimeout(function () {
+              setTimeout(function() {
                 $(".fullpage").fullpage.destroy("all");
               }, 1);
               $(".fullpage").css({
@@ -32,7 +32,7 @@ $(document).ready(function () {
         },
         onReady: {
           duration: 1000,
-          render: function ($container, $newContent) {
+          render: function($container, $newContent) {
             // Remove your CSS animation reversing class
             $container.removeClass("is-exiting");
             $container.html($newContent);
@@ -41,13 +41,15 @@ $(document).ready(function () {
           }
         },
 
-        onAfter: function ($container) {
+        onAfter: function($container) {
           var newContent = $container.find(".container");
           TweenMax.fromTo(
             newContent,
-            1, {
+            1,
+            {
               y: -100
-            }, {
+            },
+            {
               y: 0,
               opacity: 1,
               ease: Back.easeOut.config(1.7)
@@ -72,8 +74,8 @@ $(document).ready(function () {
         }
       },
       smoothState = $("#wrapper")
-      .smoothState(options)
-      .data("smoothState");
+        .smoothState(options)
+        .data("smoothState");
   });
 
   // humbNav with GASP
@@ -109,7 +111,8 @@ $(document).ready(function () {
       })
       .staggerTo(
         navLists,
-        0.1, {
+        0.1,
+        {
           y: -10,
           opacity: 1,
           ease: Linear.easeNone
@@ -117,15 +120,15 @@ $(document).ready(function () {
         0.1
       );
 
-    humBtn.click(function () {
+    humBtn.click(function() {
       menuToggle.reversed() ? menuToggle.restart() : menuToggle.reverse();
     });
     //モバイルナビのリストをクリックした時にナビを消す
     if ($(window).width() < 1024) {
-      navLists.click(function () {
+      navLists.click(function() {
         menuToggle.reversed() ? menuToggle.restart() : menuToggle.reverse();
       });
-      $(".container").click(function () {
+      $(".container").click(function() {
         if (!menuToggle.reversed()) {
           menuToggle.reverse();
         }
@@ -137,7 +140,7 @@ $(document).ready(function () {
     if ($(window).width() > 1024) {
       var rXP = 300;
       var rYP = 300;
-      $(".container").mousemove(function (e) {
+      $(".container").mousemove(function(e) {
         var rXP = e.pageX - this.offsetLeft - $(this).width() / 2;
         var rYP = e.pageY - this.offsetTop - $(this).height() / 2;
         //just one
@@ -168,7 +171,7 @@ $(document).ready(function () {
         "project7"
       ],
 
-      onLeave: function (index, nextIndex) {
+      onLeave: function(index, nextIndex) {
         tlProject
           .to([num, title], 0.1, {
             y: "-300",
@@ -176,7 +179,8 @@ $(document).ready(function () {
           })
           .to(
             image,
-            0.1, {
+            0.1,
+            {
               width: "0%",
               ease: Linear.easeNone
             },
@@ -186,14 +190,16 @@ $(document).ready(function () {
             opacity: "0"
           });
       },
-      afterLoad: function (anchorLink, afterIndex) {
+      afterLoad: function(anchorLink, afterIndex) {
         tlProject
           .fromTo(
             [num, title],
-            0.1, {
+            0.1,
+            {
               y: "50",
               ease: Linear.easeNone
-            }, {
+            },
+            {
               y: "0",
               ease: Linear.easeNone
             }
@@ -218,11 +224,11 @@ $(document).ready(function () {
       paused: true,
       reversed: true
     });
-    projectMenuBtn.click(function () {
+    projectMenuBtn.click(function() {
       $(".logo, .projectMenuBtn").css({
         display: "none"
-      })
-    })
+      });
+    });
     projectMenuToggle
       .to(projectMenu, 0.1, {
         display: "block",
@@ -234,7 +240,8 @@ $(document).ready(function () {
       })
       .staggerFrom(
         lists,
-        1, {
+        1,
+        {
           y: 10,
           opacity: 0,
           ease: Power4.easeOut
@@ -242,54 +249,51 @@ $(document).ready(function () {
         0.2
       );
     // whereever page is clicked, prokectMenu is closed
-    $(".container").click(function () {
+    $(".container").click(function() {
       tlProjectMenuClose = new TimelineMax({});
-      tlProjectMenuClose
-        .to(projectMenu, 0.1, {
-          display: "none",
-          width: "0%",
-          ease: Linear.easeNone
-        })
+      tlProjectMenuClose.to(projectMenu, 0.1, {
+        display: "none",
+        width: "0%",
+        ease: Linear.easeNone
+      });
       // to show logo and menubtn
       $(".logo, .projectMenuBtn").css({
         display: "block"
-      }, )
+      });
     });
     // when the projectMenu is clicked, open projectNav
-    projectMenuBtn.click(function () {
+    projectMenuBtn.click(function() {
       projectMenuToggle.restart();
     });
     // when arrow inside of prokectMenu is clicked, close projectNav
-    arrow.click(function () {
+    arrow.click(function() {
       tlProjectMenuClose = new TimelineMax({});
-      tlProjectMenuClose
-        .to(projectMenu, 0.1, {
-          display: "none",
-          width: "0%",
-          ease: Linear.easeNone
-        })
+      tlProjectMenuClose.to(projectMenu, 0.1, {
+        display: "none",
+        width: "0%",
+        ease: Linear.easeNone
+      });
       // opan logo and projectMenuBtn
       $(".logo, .projectMenuBtn").css({
         display: "block"
-      }, )
+      });
     });
-    lists.click(function () {
+    lists.click(function() {
       tlProjectMenuClose = new TimelineMax({});
-      tlProjectMenuClose
-        .to(projectMenu, 0.1, {
-          display: "none",
-          width: "0%",
-          ease: Linear.easeNone
-        })
+      tlProjectMenuClose.to(projectMenu, 0.1, {
+        display: "none",
+        width: "0%",
+        ease: Linear.easeNone
+      });
       $(".logo, .projectMenuBtn").css({
         display: "block"
-      })
+      });
     });
   }
 
   //
   function letterAnimation() {
-    $(document).ready(function () {
+    $(document).ready(function() {
       letterAnimeTl = new TimelineLite();
       letterAnimeTl.to("#textline", 5, {
         y: "300px"
@@ -312,19 +316,21 @@ $(document).ready(function () {
     var navLists = $(".nav__box__list");
     // when each page is loaded
     // アニメーション終わる
-    $(".skipAnimationBtn").click(function () {
+    $(".skipAnimationBtn").click(function() {
       $(this).css({
         display: "none"
-      })
+      });
       tl.totalProgress(1, false);
-    })
+    });
     tl.fromTo(
       $(".animationDiv__box:eq(0)"),
-      speed, {
+      speed,
+      {
         autoAlpha: 0,
         right: "0%",
         top: "0%"
-      }, {
+      },
+      {
         autoAlpha: 1,
         backgroundColor: "#212121",
         height: "100%",
@@ -333,11 +339,13 @@ $(document).ready(function () {
     );
     tl.fromTo(
       $(".animationDiv__box:eq(1)"),
-      speed, {
+      speed,
+      {
         autoAlpha: 0,
         right: "25%",
         bottom: "0%"
-      }, {
+      },
+      {
         autoAlpha: 1,
         backgroundColor: "#212121",
         height: "100%",
@@ -346,10 +354,12 @@ $(document).ready(function () {
     );
     tl.fromTo(
       $(".animationDiv__box:eq(2)"),
-      speed, {
+      speed,
+      {
         autoAlpha: 0,
         right: "50%"
-      }, {
+      },
+      {
         autoAlpha: 1,
         backgroundColor: "#212121",
         left: "25%",
@@ -359,11 +369,13 @@ $(document).ready(function () {
     );
     tl.fromTo(
       $(".animationDiv__box:eq(3)"),
-      speed, {
+      speed,
+      {
         autoAlpha: 0,
         left: "0%",
         bottom: "0%"
-      }, {
+      },
+      {
         autoAlpha: 1,
         backgroundColor: "#212121",
         height: "100%",
@@ -406,14 +418,14 @@ $(document).ready(function () {
     // each text title animation
     $(".titleBox__title")
       .contents()
-      .each(function (_, node) {
+      .each(function(_, node) {
         node.parentNode.removeChild(node);
         switch (node.nodeType) {
           case Node.TEXT_NODE:
             var text_split = node.textContent.split("");
 
             function animate() {
-              text_split.forEach(function (val) {
+              text_split.forEach(function(val) {
                 if (val == " ") {
                   $(".titleBox__title").append("<span>" + "&nbsp;" + "</span>");
                 } else {
@@ -429,7 +441,8 @@ $(document).ready(function () {
       });
     tl.staggerFrom(
       $(".titleBox__title span"),
-      1, {
+      1,
+      {
         ease: Power1.easeOut,
         opacity: 0,
         display: "inline-block",
@@ -440,14 +453,14 @@ $(document).ready(function () {
     tl.from($(".titleBox__subTitle"), 1, {
       ease: Power1.easeOut,
       y: 100,
-      onComplete: function () {
+      onComplete: function() {
         titleAnimation();
       }
     });
     tl.from($(".logoBack"), 4, {
       ease: Power1.easeOut,
       width: "0px",
-      opacity: 1,
+      opacity: 1
     });
     tl.to($(".logo"), 1, {
       ease: Bounce.easeOut,
@@ -458,7 +471,7 @@ $(document).ready(function () {
       top: "5%",
       right: "4%",
       autoAlpha: 1,
-      onComplete: function () {
+      onComplete: function() {
         $(".skipAnimationBtn").remove();
         $(".animationDiv").remove();
       }
@@ -466,9 +479,10 @@ $(document).ready(function () {
     if ($(window).width() > 1024) {
       tl.staggerTo(
         navLists,
-        0.5, {
+        0.5,
+        {
           opacity: 1,
-          ease: Power4.easeOut,
+          ease: Power4.easeOut
         },
         0.2
       );
@@ -478,7 +492,8 @@ $(document).ready(function () {
   function showTitles() {
     TweenMax.staggerTo(
       $(".titleBox__title span"),
-      0, {
+      0,
+      {
         ease: Power1.easeOut,
         opacity: 1,
         display: "inline-block",
@@ -496,7 +511,8 @@ $(document).ready(function () {
     if ($(window).width() > 1024) {
       TweenMax.staggerTo(
         $(".nav__box__list"),
-        0, {
+        0,
+        {
           opacity: 1
         },
         0
@@ -519,7 +535,6 @@ $(document).ready(function () {
     });
   }
 
-
   function viewPointHeigt() {
     // stop breaking design due to mobile addressBar
     // if ((navigator.userAgent.indexOf('iPhone') > 0 && navigator.userAgent.indexOf('iPad') == -1) || navigator.userAgent.indexOf('iPod') > 0 || navigator.userAgent.indexOf('Android') > 0) {
@@ -529,7 +544,7 @@ $(document).ready(function () {
   }
 
   function moveSectionDown() {
-    $(".moveSectionDown").click(function () {
+    $(".moveSectionDown").click(function() {
       $(".fullpage").fullpage.moveSectionDown();
     });
   }
@@ -539,7 +554,7 @@ $(document).ready(function () {
     if ($(window).width() > 1024) {
       $(".skillBoxes__box__bar__chart").css("width", "100%");
     }
-    $(window).scroll(function () {
+    $(window).scroll(function() {
       var st = $(window).scrollTop();
       var scrollBottom =
         $(document).height() - $(window).height() - $(window).scrollTop();
