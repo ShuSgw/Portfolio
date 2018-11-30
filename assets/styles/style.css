@@ -398,6 +398,10 @@ p {
     .contentBox__textBox__title {
       font-size: 4em; } }
 
+.contentBox__textBox__subtitle {
+  font-size: 2em;
+  padding: 1em 0; }
+
 .contentBox__textBox__text {
   font-family: "Roboto", sans-serif; }
   @media (min-width: 1024px) {
