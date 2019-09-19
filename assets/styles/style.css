@@ -772,8 +772,8 @@ p {
 
 .logoBack {
   z-index: -1;
-  width: 90%;
-  max-width: 600px;
+  width: 70%;
+  max-width: 400px;
   opacity: 0.05;
   position: fixed;
   top: 50%;
@@ -781,7 +781,7 @@ p {
   animation: rotating 10s linear infinite; }
   @media (min-width: 1024px) {
     .logoBack {
-      width: 50%; } }
+      width: 30%; } }
   .logoBack .st0 {
     fill: none;
     stroke: #C0C0C0;

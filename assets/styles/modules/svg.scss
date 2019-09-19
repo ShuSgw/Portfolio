@@ -96,8 +96,8 @@
 // background logo
 .logoBack {
     z-index: -1;
-    width: 90%;
-    max-width: 600px;
+    width: 70%;
+    max-width: 400px;
     opacity: 0.05;
     position: fixed;
     top: 50%;
@@ -105,7 +105,7 @@
     animation: rotating 10s linear infinite;
 
     @include pc {
-        width: 50%;
+        width: 30%;
     }
 
     .st0 {
